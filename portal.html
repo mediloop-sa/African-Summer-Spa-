@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Spa | Owner Portal</title>
+    <link rel="stylesheet" href="globals.css">
+    <style>
+        /* Private Portal Styles - Kept securely out of globals.css */
+        body { 
+            margin: 0; 
+            background-color: var(--bg-canvas); 
+            color: var(--text-dark); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            flex-direction: column; 
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .glass-panel { 
+            background: #FFFFFF; 
+            border: 1px solid rgba(58, 53, 50, 0.1); 
+            padding: 50px; 
+            border-radius: 20px; 
+            width: 100%; 
+            max-width: 450px; 
+            text-align: center; 
+            box-shadow: 0 20px 40px rgba(58, 53, 50, 0.08); 
+            box-sizing: border-box;
+        }
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 400; 
+            letter-spacing: 2px; 
+            margin-top: 0;
+            margin-bottom: 30px; 
+            color: var(--text-dark);
+        }
+        .input-field { 
+            width: 100%; 
+            padding: 16px 25px; 
+            margin-bottom: 20px; 
+            border-radius: 50px; 
+            border: 1px solid rgba(58, 53, 50, 0.2); 
+            background: transparent; 
+            color: var(--text-dark); 
+            box-sizing: border-box; 
+            font-family: 'Open Sans', sans-serif;
+            outline: none;
+            transition: border 0.3s;
+        }
+        .input-field:focus {
+            border: 1px solid var(--text-dark);
+        }
+        .btn-login { 
+            background: var(--text-dark); 
+            color: #FFFFFF; 
+            border: none; 
+            padding: 16px; 
+            width: 100%; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            margin-bottom: 20px; 
+            font-family: 'Open Sans', sans-serif;
+        }
+        .btn-login:hover { 
+            background: var(--text-muted); 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(58, 53, 50, 0.15);
+        }
+        .dashboard-mockup { 
+            display: none; 
+            text-align: left; 
+            max-width: 600px;
+        }
+        .email-list { 
+            background: var(--blush-pink); 
+            padding: 20px; 
+            border-radius: 15px; 
+            margin-bottom: 20px; 
+            font-family: monospace; 
+            line-height: 1.8;
+            overflow-x: auto;
+            color: var(--text-dark);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .export-btn { 
+            background: var(--bg-canvas); 
+            color: var(--text-dark); 
+            border: 1px solid var(--text-dark); 
+            padding: 14px 20px; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+        .export-btn:hover {
+            background: var(--text-dark);
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--text-dark); margin-bottom: 30px; text-align: center;">🌿 Lumière Spa <span style="display:block; font-family: 'Open Sans', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 5px; color: var(--text-muted);">Owner Portal</span></p>
+
+    <div class="glass-panel" id="login-view">
+        <h2>Secure Access</h2>
+        <input type="password" class="input-field" id="passwordInput" placeholder="Enter Master Password">
+        <button class="btn-login" onclick="verifyLogin()">Access Data</button>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Protected by AES-256 Encryption</p>
+    </div>
+
+    <div class="glass-panel dashboard-mockup" id="dash-view">
+        <h2>Client Directory</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Active Newsletter Subscribers</p>
+        
+        <div class="email-list" id="emailListContainer">
+            </div>
+        
+        <button class="export-btn" onclick="downloadCSV()">Download CSV for Outlook/Gmail</button>
+    </div>
+
+    <script>
+        // 1. VERIFY PASSWORD
+        function verifyLogin() {
+            const passwordInput = document.getElementById('passwordInput').value;
+            const masterPassword = "MediLoopWebsites@2026"; 
+
+            if (passwordInput === masterPassword) {
+                document.getElementById('login-view').style.display = 'none';
+                document.getElementById('dash-view').style.display = 'block';
+                fetchLiveEmails(); // Triggers the database pull when password is correct
+            } else {
+                alert("Incorrect Master Password. Please try again.");
+                document.getElementById('passwordInput').value = ''; 
+            }
+        }
+
+        // 2. FETCH EMAILS FROM SUPABASE
+        async function fetchLiveEmails() {
+            const emailContainer = document.getElementById('emailListContainer');
+            emailContainer.innerHTML = 'Connecting to secure server...';
+
+            // ⚠️ PASTE YOUR ANON KEY HERE ⚠️
+            const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE'; 
+            
+            // This URL adds ?select=email_address to only grab that specific column
+            const SUPABASE_URL = 'https://vafzjdqepmuunwqhzunz.supabase.co/rest/v1/mailing_list?select=email_address';
+
+            try {
+                const response = await fetch(SUPABASE_URL, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Database connection failed.');
+                }
+
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    emailContainer.innerHTML = 'Your mailing list is currently empty.';
+                    return;
+                }
+
+                // Extracts just the emails and stacks them with a line break (<br>)
+                emailContainer.innerHTML = data.map(client => client.email_address).join('<br>');
+
+            } catch (error) {
+                emailContainer.innerHTML = 'Error loading data. Please check your Supabase API keys.';
+                emailContainer.style.color = '#B35C3B';
+            }
+        }
+
+        // 3. DOWNLOAD CSV LOGIC
+        function downloadCSV() {
+            // Get the text from the box and split it by line breaks
+            const containerText = document.getElementById('emailListContainer').innerHTML;
+            const emails = containerText.split('<br>');
+            
+            // Don't download if it's an error or empty
+            if(emails.length === 0 || emails[0].includes('Connecting') || emails[0].includes('Error') || emails[0].includes('empty')) {
+                alert('No emails available to download.');
+                return;
+            }
+
+            // Create CSV formatting
+            let csvContent = "data:text/csv;charset=utf-8,Email Address\n";
+            emails.forEach(function(email) {
+                csvContent += email + "\n";
+            });
+
+            // Trigger the download automatically
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Lumiere_Spa_Subscribers.csv");
+            document.body.appendChild(link); 
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Spa | Terms & Conditions</title>
+    <link rel="stylesheet" href="globals.css">
+    <style>
+        .legal-content { max-width: 800px; margin: 0 auto; padding: 60px 20px 100px 20px; }
+        .legal-content h3 { font-size: 1.5rem; margin: 40px 0 15px 0; }
+        .legal-content p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <nav class="glass-sidebar" id="glassSidebar">
+        <button class="close-menu" id="closeMenu" aria-label="Close Menu">&times;</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rituals.html">Rituals</a></li>
+            <li><a href="rewards.html">Rewards</a></li>
+            <li><a href="press.html">Press</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button class="btn-pill open-booking" style="padding: 12px 30px; font-size: 0.8rem; width: 100%;">Book Now</button>
+        </div>
+    </nav>
+
+    <header class="hero-sub" style="height: 40vh;">
+        <div class="hero-nav reveal-up">
+            <span class="logo-icon">◇◇◇</span>
+            <span class="logo-text">Lumière Spa</span>
+        </div>
+        <div class="hero-content text-center">
+            <h1 class="reveal-up">Terms & Conditions</h1>
+            <hr class="hero-divider reveal-up" style="transition-delay: 0.1s; margin: 20px auto; width: 60px;">
+        </div>
+    </header>
+
+    <section class="legal-content reveal-up">
+        <h3>1. Introduction</h3>
+        <p>Welcome to Lumière Spa. By accessing our website, booking an appointment, or purchasing our services, you agree to be bound by these Terms and Conditions. Please read them carefully.</p>
+
+        <h3>2. Bookings & Cancellations</h3>
+        <p>We kindly ask that you arrive 15 minutes before your scheduled treatment. Late arrivals will result in a shortened treatment time out of respect for our next client. Cancellations made less than 24 hours prior to the appointment will incur a 50% cancellation fee.</p>
+
+        <h3>3. Health & Safety</h3>
+        <p>Your well-being is our utmost priority. Please inform your therapist of any medical conditions, allergies, or if you are pregnant prior to your treatment. Lumière Spa reserves the right to refuse service if a treatment is deemed medically unsafe for the client.</p>
+
+        <h3>4. Gift Cards</h3>
+        <p>Gift cards are valid for 12 months from the date of purchase and cannot be exchanged for cash. Lost or stolen gift cards cannot be replaced.</p>
+
+        <h3>5. Modifications</h3>
+        <p>We reserve the right to update our treatment menu, pricing, and these Terms & Conditions at any time without prior notice. The most current version will always be available on our website.</p>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top reveal-up">
+                <h3 class="footer-logo"><span class="logo-icon">◇◇◇</span> Lumière Spa</h3>
+                <p>A sanctuary carved from the earth, dedicated to your balance, harmony, and ultimate renewal.</p>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-col reveal-up" style="transition-delay: 0.1s;">
+                    <h4>Contact Details</h4>
+                    <p>+27 82 259 3302</p>
+                    <p>info@mediloopsoftware.com</p>
+                    <p>123 Sanctuary Blvd<br>Wellness City, 0001</p>
+                </div>
+                <div class="footer-col reveal-up" style="transition-delay: 0.2s;">
+                    <h4>Working Hours</h4>
+                    <p>Monday - Friday: 08:00 - 19:00</p>
+                    <p>Saturday: 09:00 - 17:00</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom reveal-up" style="transition-delay: 0.3s;">
+            <div class="footer-legal">
+                <a href="terms.html">Terms & Conditions</a>
+                <span class="divider">|</span>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <p class="powered-by">Powered by MediLoop Websites</p>
+        </div>
+    </footer>
+
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-content">
+            <button class="close-booking" id="closeBooking">&times;</button>
+            <h2>Book Your Visit</h2>
+            <p>How would you like to schedule your sanctuary experience?</p>
+            <div class="booking-options">
+                <a href="https://wa.me/27822593302" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
+                <a href="https://calendar.google.com/" target="_blank" class="btn-fresha">Book via Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <span>We use cookies to ensure you get the best experience on our website.</span>
+        <button class="btn-cookie" id="acceptCookiesBtn">Got it</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealElements = document.querySelectorAll('.reveal-up');
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, revealOptions);
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+                if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
+            });
+
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const glassSidebar = document.getElementById('glassSidebar');
+            if(menuToggle && closeMenu && glassSidebar) {
+                menuToggle.addEventListener('click', () => glassSidebar.classList.add('active'));
+                closeMenu.addEventListener('click', () => glassSidebar.classList.remove('active'));
+            }
+
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+            if (cookieBanner && acceptCookiesBtn) {
+                if (localStorage.getItem('cookiesAccepted') === 'true') {
+                    cookieBanner.style.display = 'none';
+                }
+                acceptCookiesBtn.addEventListener('click', () => {
+                    cookieBanner.style.display = 'none';
+                    localStorage.setItem('cookiesAccepted', 'true');
+                });
+            }
+
+            const bookingModal = document.getElementById('bookingModal');
+            const closeBooking = document.getElementById('closeBooking');
+            const openBookingBtns = document.querySelectorAll('.open-booking');
+            openBookingBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (glassSidebar && glassSidebar.classList.contains('active')) {
+                        glassSidebar.classList.remove('active');
+                    }
+                    bookingModal.classList.add('active');
+                });
+            });
+            if (closeBooking) {
+                closeBooking.addEventListener('click', () => bookingModal.classList.remove('active'));
+            }
+            window.addEventListener('click', (e) => {
+                if (e.target === bookingModal) bookingModal.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
