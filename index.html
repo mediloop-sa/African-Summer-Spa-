@@ -32,7 +32,7 @@
             <span class="logo-icon">◇◇◇</span>
             <span class="logo-text">Lumière Spa</span>
         </div>
-        
+
         <div class="hero-content">
             <h1 class="reveal-up">Find your<br>natural balance</h1>
             <hr class="hero-divider reveal-up" style="transition-delay: 0.1s;">
@@ -44,11 +44,11 @@
     <section class="philosophy">
         <div class="container philosophy-grid">
             <div class="philosophy-text reveal-up">
-                <h2>Our Philosophy</h2>
-                <p>Established in 2015, our sanctuary is dedicated to giving our clients quality and luxury services to ensure their utmost relaxation and pampering to achieve balance, harmony and renewal.</p>
+                <h2>Biancé's Story</h2>
+                <p>Born and raised in Hoedspruit, I always had a deep love for the wellness and clinical world. I studied at Isa Carstens Academy to become a qualified somatologist. My journey has been driven by a passion for holistic skin and body care, blending clinical expertise with a serene, restorative touch. I created this space to offer personalized treatments that not only elevate your natural beauty but also provide a peaceful escape from the everyday.</p>
             </div>
             <div class="philosophy-action reveal-up">
-                <button class="btn-pill open-booking">Book Now</button>
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Biance.jpg" alt="Biancé" style="width: 100%; max-width: 400px; border-radius: 25px; box-shadow: 0 15px 35px rgba(92, 74, 66, 0.15);">
             </div>
         </div>
     </section>
@@ -57,11 +57,11 @@
         <div class="container text-center">
             <h2 class="reveal-up">Our Packages</h2>
             <p class="subtitle reveal-up">Curated journeys to restore your glow.</p>
-            
+
             <div class="scroll-indicator reveal-up">Swipe to explore <span>⟶</span></div>
 
             <div class="horizontal-scroll reveal-up">
-                
+
                 <div class="package-card" 
                      data-title="The Golden Hour" 
                      data-items="45 Min Back, Neck & Shoulder Massage|45 Min Luminous Glow Facial|Warm Foot Paraffin Dip|Spa Lunch & Herbal Tea" 
@@ -142,7 +142,7 @@
         <div class="container text-center">
             <h2>Join Our Mailing List</h2>
             <p class="subtitle">Subscribe to receive exclusive offers, wellness tips, and spa news.</p>
-            
+
             <form id="newsletterForm" class="newsletter-form">
                 <input type="email" id="emailInput" placeholder="Enter your email address" required>
                 <button type="submit" class="btn-pill" id="subscribeBtn">Subscribe</button>
@@ -157,7 +157,7 @@
                 <h3 class="footer-logo"><span class="logo-icon">◇◇◇</span> Lumière Spa</h3>
                 <p>A sanctuary carved from the earth, dedicated to your balance, harmony, and ultimate renewal.</p>
             </div>
-            
+
             <div class="footer-grid">
                 <div class="footer-col reveal-up" style="transition-delay: 0.1s;">
                     <h4>Contact Details</h4>
@@ -165,7 +165,7 @@
                     <p>info@mediloopsoftware.com</p>
                     <p>123 Sanctuary Blvd<br>Wellness City, 0001</p>
                 </div>
-                
+
                 <div class="footer-col reveal-up" style="transition-delay: 0.2s;">
                     <h4>Working Hours</h4>
                     <p>Monday - Friday: 08:00 - 19:00</p>
@@ -174,7 +174,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom reveal-up" style="transition-delay: 0.3s;">
             <div class="footer-legal">
                 <a href="terms.html">Terms & Conditions</a>
@@ -200,16 +200,16 @@
     <div class="dossier-modal" id="dossierModal">
         <div class="dossier-content">
             <button class="close-dossier" id="closeDossier">&times;</button>
-            
+
             <h2 id="modalTitle">Package Name</h2>
-            
+
             <ul class="dossier-list" id="modalList"></ul>
-            
+
             <div class="dossier-meta">
                 <span class="dossier-time" id="modalTime">Time</span>
                 <span class="dossier-price" id="modalPrice">Price</span>
             </div>
-            
+
             <div class="dossier-action">
                 <button class="btn-pill open-booking" id="dossierBookBtn">Book Treatment</button>
             </div>
@@ -223,7 +223,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            
+
             // 1. CINEMATIC SCROLL REVEAL 
             const revealElements = document.querySelectorAll('.reveal-up');
             const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
@@ -255,17 +255,17 @@
             const modal = document.getElementById('dossierModal');
             const closeDossier = document.getElementById('closeDossier');
             const packageCards = document.querySelectorAll('.package-card');
-            
+
             packageCards.forEach(card => {
                 card.addEventListener('click', () => {
                     document.getElementById('modalTitle').textContent = card.dataset.title;
                     document.getElementById('modalTime').textContent = card.dataset.time;
                     document.getElementById('modalPrice').textContent = card.dataset.price;
-                    
+
                     const list = document.getElementById('modalList');
                     list.innerHTML = ''; 
                     const items = card.dataset.items.split('|'); 
-                    
+
                     items.forEach((item, index) => {
                         const li = document.createElement('li');
                         li.textContent = item;
@@ -275,7 +275,7 @@
                     });
 
                     modal.classList.add('active');
-                    
+
                     setTimeout(() => {
                         document.querySelectorAll('.dossier-item').forEach(li => li.classList.add('show'));
                     }, 50);
@@ -296,7 +296,7 @@
                     e.preventDefault();
                     const email = document.getElementById('emailInput').value;
                     const subscribeBtn = document.getElementById('subscribeBtn');
-                    
+
                     subscribeBtn.textContent = 'Subscribing...';
                     subscribeBtn.disabled = true;
 
