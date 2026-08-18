@@ -3,447 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Spa | Rituals</title>
+    <title>MediLoop | Rituals & Services</title>
     <link rel="stylesheet" href="globals.css">
 </head>
 <body>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-    </button>
-
-    <nav class="glass-sidebar" id="glassSidebar">
-        <button class="close-menu" id="closeMenu" aria-label="Close Menu">&times;</button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="rituals.html">Rituals</a></li>
-            <li><a href="rewards.html">Rewards</a></li>
-            <li><a href="press.html">Press</a></li>
-        </ul>
-        <div class="sidebar-footer">
-            <button class="btn-pill open-booking" style="padding: 12px 30px; font-size: 0.8rem; width: 100%;">Book Now</button>
-        </div>
+           <!-- PERFECTED NAVIGATION BAR -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rituals.html">Rituals</a>
+        <a href="rewards.html">Rewards</a>
+        <a href="press.html">Press</a>
     </nav>
 
-    <header class="hero-sub">
-        <div class="hero-nav reveal-up">
-            <span class="logo-icon">◇◇◇</span>
-            <span class="logo-text">Lumière Spa</span>
-        </div>
-        
-        <div class="hero-content text-center">
-            <h1 class="reveal-up">Our Rituals</h1>
-            <hr class="hero-divider reveal-up" style="transition-delay: 0.1s; margin: 20px auto; width: 60px;">
-            <p class="hero-subtext italic-quote reveal-up" style="transition-delay: 0.2s;">"The art of profound restoration."</p>
-            <a href="#treatments" class="btn-glass reveal-up" style="transition-delay: 0.3s;">Explore</a>
+       <!-- NEW SPLIT EDITORIAL HERO -->
+    <header class="hero subpage-hero-new">
+        <div class="container hero-split">
+            <!-- Left Side: Typography -->
+            <div class="hero-left">
+                <h1>RITUALS & SERVICES</h1>
+                <hr class="hero-line">
+                <p>Surrender to the process.</p>
+            </div>
+            <!-- Right Side: Glassmorphic CTA -->
+            <div class="hero-right">
+                <a href="#" class="btn-glass">BOOK A RITUAL</a>
+            </div>
         </div>
     </header>
 
-    <section class="welcome-intro reveal-up" id="treatments">
-        <div class="container text-center" style="max-width: 800px;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Curated For You</h2>
-            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                Whether you are here to melt away city tension with a deep earth massage, reveal your natural glow with our bespoke clinical facials, or simply surrender to a complete grooming refresh—our menu is entirely yours to command. Mix, match, and indulge. This is your time.
-            </p>
+    <!-- IMMERSIVE MOOD MENU SECTION -->
+    <section class="mood-menu-section">
+        <!-- The Shifting Backgrounds (Tinted) -->
+        <div class="mood-bg active" id="bg-grounded" style="background-image: linear-gradient(rgba(26, 54, 34, 0.85), rgba(26, 54, 34, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png');"></div>
+        <div class="mood-bg" id="bg-radiant" style="background-image: linear-gradient(rgba(45, 35, 25, 0.85), rgba(45, 35, 25, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20Image%201.png');"></div>
+        <div class="mood-bg" id="bg-detoxified" style="background-image: linear-gradient(rgba(15, 35, 40, 0.85), rgba(15, 35, 40, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%202.png');"></div>
+        <div class="mood-bg" id="bg-weightless" style="background-image: linear-gradient(rgba(30, 45, 35, 0.85), rgba(30, 45, 35, 0.85)), url('https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/SocialMedia3.png');"></div>
+
+        <div class="container mood-content-wrapper">
+            <!-- Sticky Filter Bar (No Brackets) -->
+            <div class="mood-filter-bar">
+                <h3 class="mood-prompt">I WANT TO FEEL...</h3>
+                <div class="mood-buttons">
+                    <button class="mood-btn active" data-mood="grounded">GROUNDED</button>
+                    <button class="mood-btn" data-mood="radiant">RADIANT</button>
+                    <button class="mood-btn" data-mood="detoxified">DETOXIFIED</button>
+                    <button class="mood-btn" data-mood="weightless">WEIGHTLESS</button>
+                </div>
+            </div>
+
+            <!-- Service Lists Container (Extended) -->
+            <div class="mood-lists-container">
+
+                <!-- GROUNDED LIST -->
+                <div class="mood-list active" id="list-grounded">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Deep Tissue Harmony</h3>
+                                <span class="treatment-meta">90 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 1,200</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Cold-Pressed Eucalyptus, Himalayan Cedarwood, Organic Arnica.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Hot Stone Grounding</h3>
+                                <span class="treatment-meta">75 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 950</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Basalt Volcanic Stones, Sweet Almond Oil, Sandalwood.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Reflexology Journey</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 650</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Peppermint Extract, Shea Butter, Tea Tree Oil.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Himalayan Salt Scrub</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 800</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Pink Mineral Salt, Bergamot, Virgin Coconut Oil.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RADIANT LIST -->
+                <div class="mood-list" id="list-radiant">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Luminous Glow Facial</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 850</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Organic Rosehip, Vitamin C Serum, White Tea Extract.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Citrus Body Polish</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 650</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Crushed Walnut Shell, Grapefruit Essence, Jojoba Oil.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Anti-Aging Gold Facial</h3>
+                                <span class="treatment-meta">90 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 1,500</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: 24k Gold Leaf, Hyaluronic Acid, Lotus Flower.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Rose Quartz Gua Sha</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 700</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Rose Absolute, Squalane, Cooling Quartz.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETOXIFIED LIST -->
+                <div class="mood-list" id="list-detoxified">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Mineral Detox Soak</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 600</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Dead Sea Salts, Activated Charcoal, Juniper Berry.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Lymphatic Drainage</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 900</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Cypress Oil, Lemon Balm, Rosemary Extract.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Seaweed Body Wrap</h3>
+                                <span class="treatment-meta">75 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 1,100</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Wild-Harvested Kelp, Green Clay, Aloe Vera.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Cupping Therapy</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 650</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Botanicals: Massage Cupping, Ginger Root Oil, Warming Clove.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WEIGHTLESS LIST -->
+                <div class="mood-list" id="list-weightless">
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Flotation Therapy</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 750</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: 1000lbs Epsom Salt, Body-Temperature Water, Sensory Deprivation.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Acoustic Sound Bath</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 500</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: Quartz Crystal Bowls, Binaural Beats, Guided Meditation.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Reiki Energy Healing</h3>
+                                <span class="treatment-meta">60 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 800</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: Japanese Energy Transfer, Chakra Balancing, Frankincense Aromatherapy.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                    <div class="treatment-item">
+                        <div class="treatment-header">
+                            <div class="treatment-title-area">
+                                <h3>Craniosacral Therapy</h3>
+                                <span class="treatment-meta">45 MIN</span>
+                            </div>
+                            <span class="treatment-price">R 750</span>
+                        </div>
+                        <div class="treatment-expansion">
+                            <p class="botanicals">Key Elements: Light Touch Fascia Release, Deep Tissue Unwinding, Lavender.</p>
+                            <a href="#" class="btn-reserve">Reserve This Ritual</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <section class="treatment-category tint-1">
-        <div class="container">
-            <div class="category-header reveal-up">
-                <h2>Facial Therapies</h2>
-                <div class="scroll-indicator">Swipe <span>⟶</span></div>
-            </div>
-            <div class="horizontal-scroll scroll-ltr reveal-up">
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%20Website%202.jpg" class="t-img" alt="Facial">
-                    <div class="t-glass-info">
-                        <h4>The Lumière Glow</h4>
-                        <p>60 Min | R 850</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" class="t-img" alt="Facial">
-                    <div class="t-glass-info">
-                        <h4>Clinical Microneedling</h4>
-                        <p>90 Min | R 1,200</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%201.png" class="t-img" alt="Facial">
-                    <div class="t-glass-info">
-                        <h4>Hydration Boost</h4>
-                        <p>45 Min | R 650</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%20Website%202.jpg" class="t-img" alt="Facial">
-                    <div class="t-glass-info">
-                        <h4>LED Therapy Express</h4>
-                        <p>30 Min | R 450</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="treatment-category tint-2">
-        <div class="container">
-            <div class="category-header reveal-up" style="text-align: right;">
-                <h2>Massage Rituals</h2>
-                <div class="scroll-indicator"><span>⟵</span> Swipe</div>
-            </div>
-            <div class="horizontal-scroll scroll-rtl reveal-up">
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%204.png" class="t-img" alt="Massage">
-                    <div class="t-glass-info">
-                        <h4>Deep Tissue Harmony</h4>
-                        <p>60 Min | R 900</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%20Website%202.jpg" class="t-img" alt="Massage">
-                    <div class="t-glass-info">
-                        <h4>Hot Stone Melt</h4>
-                        <p>90 Min | R 1,150</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%201.png" class="t-img" alt="Massage">
-                    <div class="t-glass-info">
-                        <h4>Aromatherapy Drift</h4>
-                        <p>60 Min | R 800</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" class="t-img" alt="Massage">
-                    <div class="t-glass-info">
-                        <h4>Pregnancy Massage</h4>
-                        <p>60 Min | R 850</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="treatment-category tint-3">
-        <div class="container">
-            <div class="category-header reveal-up">
-                <h2>Hands & Feet</h2>
-                <div class="scroll-indicator">Swipe <span>⟶</span></div>
-            </div>
-            <div class="horizontal-scroll scroll-ltr reveal-up">
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" class="t-img" alt="Nails">
-                    <div class="t-glass-info">
-                        <h4>Signature Spa Pedi</h4>
-                        <p>60 Min | R 450</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%204.png" class="t-img" alt="Nails">
-                    <div class="t-glass-info">
-                        <h4>Gel Manicure</h4>
-                        <p>45 Min | R 350</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%20Website%202.jpg" class="t-img" alt="Nails">
-                    <div class="t-glass-info">
-                        <h4>Paraffin Heel Dip</h4>
-                        <p>30 Min | R 250</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%201.png" class="t-img" alt="Nails">
-                    <div class="t-glass-info">
-                        <h4>Luxury Spa Mani</h4>
-                        <p>60 Min | R 400</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="treatment-category tint-4">
-        <div class="container">
-            <div class="category-header reveal-up" style="text-align: right;">
-                <h2>Grooming & Waxing</h2>
-                <div class="scroll-indicator"><span>⟵</span> Swipe</div>
-            </div>
-            <div class="horizontal-scroll scroll-rtl reveal-up">
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%201.png" class="t-img" alt="Waxing">
-                    <div class="t-glass-info">
-                        <h4>Full Body Wax</h4>
-                        <p>60 Min | R 750</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Spa%20image%203.png" class="t-img" alt="Brows">
-                    <div class="t-glass-info">
-                        <h4>Brow Shape & Tint</h4>
-                        <p>30 Min | R 200</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media%204.png" class="t-img" alt="Tint">
-                    <div class="t-glass-info">
-                        <h4>Lash Lift & Tint</h4>
-                        <p>45 Min | R 450</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-                <div class="treatment-card ltr-content" onclick="this.classList.toggle('active')">
-                    <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Theme%20Image%20Website%202.jpg" class="t-img" alt="Grooming">
-                    <div class="t-glass-info">
-                        <h4>Half Leg Wax</h4>
-                        <p>30 Min | R 280</p>
-                    </div>
-                    <div class="t-book-overlay">
-                        <button class="btn-pill open-booking">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="spa-etiquette reveal-up">
-        <div class="container">
-            <div class="etiquette-grid">
-                <div class="etiquette-title">
-                    <h2>Spa<br>Etiquette</h2>
-                </div>
-                <div class="etiquette-details">
-                    <div class="e-block">
-                        <h4>Arrival Time</h4>
-                        <p>Please arrive 15 minutes prior to your scheduled treatment to allow time for changing and a brief consultation. Late arrivals will result in abbreviated treatment times.</p>
-                    </div>
-                    <div class="e-block">
-                        <h4>Quiet Environment</h4>
-                        <p>To preserve our sanctuary of peace, we kindly request that mobile phones be placed on silent and conversations be kept to a hushed whisper.</p>
-                    </div>
-                    <div class="e-block">
-                        <h4>Cancellations</h4>
-                        <p>Should you need to cancel or reschedule, please provide 24 hours notice to avoid a 50% cancellation fee.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="gift-card-section reveal-up">
-        <div class="container gift-container">
-            <div class="gift-image">
-                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Second%20Pink%20Image.jpg" alt="Gift Card">
-            </div>
-            <div class="gift-glass-box">
-                <h2>The Gift<br>of Renewal</h2>
-                <p>Treat someone special to an unforgettable sanctuary experience. Available digitally or perfectly packaged in-store.</p>
-                <button class="btn-pill open-booking">Purchase a Gift Card</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="newsletter reveal-up" id="book">
+    <!-- THE ETIQUETTE (WHITE SPACE BREAK) -->
+    <section class="etiquette-section">
         <div class="container text-center">
-            <h2>Join Our Mailing List</h2>
-            <p class="subtitle">Subscribe to receive exclusive offers, wellness tips, and spa news.</p>
-            <form id="newsletterForm" class="newsletter-form">
-                <input type="email" id="emailInput" placeholder="Enter your email address" required>
-                <button type="submit" class="btn-pill" id="subscribeBtn">Subscribe</button>
-            </form>
-            <p id="formMessage" class="form-message"></p>
+            <h2 class="editorial-heading" style="color: var(--forest-green); margin-bottom: 60px;">SPA ETIQUETTE</h2>
+            <div class="etiquette-grid">
+                <div class="etiquette-item">
+                    <h4>Arrival</h4>
+                    <p>Please arrive 15 minutes prior to your scheduled ritual to allow time for a seamless transition into our sanctuary.</p>
+                </div>
+                <div class="etiquette-item">
+                    <h4>Digital Detox</h4>
+                    <p>To preserve the absolute tranquility of the space, we kindly request that all mobile devices remain silenced and stored away.</p>
+                </div>
+                <div class="etiquette-item">
+                    <h4>Attire</h4>
+                    <p>Plush robes and slippers are provided upon arrival. Our therapists are trained in strict draping techniques for your complete comfort.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top reveal-up">
-                <h3 class="footer-logo"><span class="logo-icon">◇◇◇</span> Lumière Spa</h3>
-                <p>A sanctuary carved from the earth, dedicated to your balance, harmony, and ultimate renewal.</p>
+    <!-- THE GIFT CARD SECTION (BOTTOM BOOKEND) -->
+    <section class="gift-card-section">
+        <div class="container gift-grid">
+            <div class="gift-text">
+                <h2 class="editorial-heading" style="color: #FFFFFF; margin-bottom: 20px;">THE GIFT OF SANCTUARY</h2>
+                <p>Share the ultimate luxury: time to breathe. Our beautifully physical and digital gift cards allow your loved ones to select the exact ritual their body needs.</p>
+                <a href="#" class="btn-transparent">Purchase a Gift Card</a>
             </div>
-            <div class="footer-grid">
-                <div class="footer-col reveal-up" style="transition-delay: 0.1s;">
-                    <h4>Contact Details</h4>
-                    <p>+27 82 259 3302</p>
-                    <p>info@mediloopsoftware.com</p>
-                    <p>123 Sanctuary Blvd<br>Wellness City, 0001</p>
-                </div>
-                <div class="footer-col reveal-up" style="transition-delay: 0.2s;">
-                    <h4>Working Hours</h4>
-                    <p>Monday - Friday: 08:00 - 19:00</p>
-                    <p>Saturday: 09:00 - 17:00</p>
-                    <p>Sunday: Closed</p>
-                </div>
+            <div class="gift-image">
+                <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Social%20Media.png" alt="Gift of Spa">
             </div>
         </div>
-        <div class="footer-bottom reveal-up" style="transition-delay: 0.3s;">
-            <div class="footer-legal">
-                <a href="terms.html">Terms & Conditions</a>
-                <span class="divider">|</span>
-                <a href="privacy.html">Privacy Policy</a>
+    </section>
+
+    <!-- STRICT DARK FOOTER -->
+    <footer class="footer-dark">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: hello@mediloopspa.co.za</p>
+                <p>Phone: +27 12 345 6789</p>
             </div>
-            <p class="powered-by">Powered by MediLoop Websites</p>
+            <div class="footer-col">
+                <h4>Operating Hours</h4>
+                <p>Monday - Friday</p>
+                <p>08h00 - 17h00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Powered by <a href="https://mediloop.co.za">MediLoop Websites</a></p>
         </div>
     </footer>
 
-    <div class="booking-modal" id="bookingModal">
-        <div class="booking-content">
-            <button class="close-booking" id="closeBooking">&times;</button>
-            <h2>Book Your Visit</h2>
-            <p>How would you like to schedule your sanctuary experience?</p>
-            <div class="booking-options">
-                <a href="https://wa.me/27822593302" target="_blank" class="btn-whatsapp">Book via WhatsApp</a>
-                <a href="https://calendar.google.com/" target="_blank" class="btn-fresha">Book via Portal</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="cookie-banner" id="cookieBanner">
-        <span>We use cookies to ensure you get the best experience on our website.</span>
-        <button class="btn-cookie" id="acceptCookiesBtn">Got it</button>
-    </div>
-
+    <!-- INTERACTIVE MOOD MENU JAVASCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const revealElements = document.querySelectorAll('.reveal-up');
-            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
-            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            }, revealOptions);
-            revealElements.forEach(el => {
-                revealOnScroll.observe(el);
-                if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('active');
-            });
+            // Background Shifting Logic
+            const moodBtns = document.querySelectorAll('.mood-btn');
+            const moodBgs = document.querySelectorAll('.mood-bg');
+            const moodLists = document.querySelectorAll('.mood-list');
 
-            const menuToggle = document.getElementById('menuToggle');
-            const closeMenu = document.getElementById('closeMenu');
-            const glassSidebar = document.getElementById('glassSidebar');
-            if(menuToggle && closeMenu && glassSidebar) {
-                menuToggle.addEventListener('click', () => glassSidebar.classList.add('active'));
-                closeMenu.addEventListener('click', () => glassSidebar.classList.remove('active'));
-            }
+            moodBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-mood');
 
-            const newsletterForm = document.getElementById('newsletterForm');
-            const formMessage = document.getElementById('formMessage');
-            if(newsletterForm) {
-                newsletterForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const email = document.getElementById('emailInput').value;
-                    const subscribeBtn = document.getElementById('subscribeBtn');
-                    subscribeBtn.textContent = 'Subscribing...';
-                    subscribeBtn.disabled = true;
+                    // Remove active states
+                    moodBtns.forEach(b => b.classList.remove('active'));
+                    moodBgs.forEach(bg => bg.classList.remove('active'));
+                    moodLists.forEach(list => list.classList.remove('active'));
 
-                    const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY_HERE'; 
-                    const SUPABASE_URL = 'https://vafzjdqepmuunwqhzunz.supabase.co/rest/v1/mailing_list';
-
-                    try {
-                        const response = await fetch(SUPABASE_URL, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'apikey': SUPABASE_ANON_KEY,
-                                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                                'Prefer': 'return=minimal'
-                            },
-                            body: JSON.stringify({ email_address: email })
-                        });
-                        if (response.ok) {
-                            formMessage.textContent = 'Thank you! You have been successfully subscribed.';
-                            formMessage.style.color = 'var(--text-dark)';
-                            newsletterForm.reset();
-                        } else { throw new Error('Network error.'); }
-                    } catch (error) {
-                        formMessage.textContent = 'Oops! Something went wrong. Please try again.';
-                        formMessage.style.color = '#B35C3B'; 
-                    } finally {
-                        subscribeBtn.textContent = 'Subscribe';
-                        subscribeBtn.disabled = false;
-                    }
-                });
-            }
-
-            const cookieBanner = document.getElementById('cookieBanner');
-            const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
-            if (cookieBanner && acceptCookiesBtn) {
-                if (localStorage.getItem('cookiesAccepted') === 'true') {
-                    cookieBanner.style.display = 'none';
-                }
-                acceptCookiesBtn.addEventListener('click', () => {
-                    cookieBanner.style.display = 'none';
-                    localStorage.setItem('cookiesAccepted', 'true');
-                });
-            }
-
-            const bookingModal = document.getElementById('bookingModal');
-            const closeBooking = document.getElementById('closeBooking');
-            const openBookingBtns = document.querySelectorAll('.open-booking');
-            openBookingBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (glassSidebar && glassSidebar.classList.contains('active')) {
-                        glassSidebar.classList.remove('active');
-                    }
-                    bookingModal.classList.add('active');
+                    // Add active state to clicked elements
+                    btn.classList.add('active');
+                    document.getElementById('bg-' + target).classList.add('active');
+                    document.getElementById('list-' + target).classList.add('active');
                 });
             });
-            if (closeBooking) {
-                closeBooking.addEventListener('click', () => bookingModal.classList.remove('active'));
-            }
-            window.addEventListener('click', (e) => {
-                if (e.target === bookingModal) bookingModal.classList.remove('active');
+
+            // Treatment Accordion Expansion Logic
+            const treatmentHeaders = document.querySelectorAll('.treatment-header');
+            treatmentHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const parent = header.parentElement;
+                    const currentlyExpanded = document.querySelector('.treatment-item.expanded');
+                    if(currentlyExpanded && currentlyExpanded !== parent) {
+                        currentlyExpanded.classList.remove('expanded');
+                    }
+                    parent.classList.toggle('expanded');
+                });
             });
         });
     </script>
