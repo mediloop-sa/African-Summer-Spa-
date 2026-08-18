@@ -153,7 +153,7 @@ nav a:hover {
     background: var(--forest-green);
     color: var(--bg-pearl);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(26, 54, 34, 0.3);
+    box-shadow: 0 10px 20px rgba(74, 46, 30, 0.3);
 }
 
 /* Regular button style kept for other elements if needed */
@@ -171,7 +171,7 @@ nav a:hover {
 }
 .btn:hover { 
     transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(26, 54, 34, 0.2); 
+    box-shadow: 0 10px 20px rgba(74, 46, 30, 0.2); 
 }
 
 /* --- WELCOME SECTION --- */
@@ -238,8 +238,8 @@ nav a:hover {
     height: 320px; 
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 25px rgba(26, 54, 34, 0.4); 
-    border: 1px solid rgba(26, 54, 34, 0.2);
+    box-shadow: 0 0 25px rgba(74, 46, 30, 0.4); 
+    border: 1px solid rgba(74, 46, 30, 0.2);
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -250,7 +250,7 @@ nav a:hover {
 }
 .metric-circle:hover { 
     transform: translateY(-8px); 
-    box-shadow: 0 10px 40px rgba(26, 54, 34, 0.65); 
+    box-shadow: 0 10px 40px rgba(74, 46, 30, 0.65); 
 }
 .metric-number { 
     font-size: 3rem; 
@@ -620,7 +620,7 @@ nav a:hover {
 .slick-fade-line {
     border: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(26, 54, 34, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(74, 46, 30, 0.4), transparent);
     width: 100%;
     margin: 0 auto;
 }
@@ -679,7 +679,7 @@ nav a:hover {
 .accordion-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(26, 54, 34, 0.6); 
+    background: rgba(74, 46, 30, 0.6); 
     transition: background 0.6s ease;
     display: flex;
     align-items: center;
@@ -1029,7 +1029,7 @@ nav a:hover {
     backdrop-filter: blur(15px);
     padding: 50px;
     border-radius: 20px;
-    border: 1px solid rgba(26, 54, 34, 0.1);
+    border: 1px solid rgba(74, 46, 30, 0.1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     margin-left: -10%; /* Creates the elegant overlap */
     text-align: left;
