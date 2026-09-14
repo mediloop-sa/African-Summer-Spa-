@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price List | African Summer Spa</title>
+<meta name="description" content="View or download the African Summer Spa pricing brochure for body, facial and medical aesthetic treatments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="name">African Summer Spa</span>
+    <span class="sub">BIANCÉ JANSE VAN VUUREN</span>
+  </a>
+  <button class="hamburger" aria-label="Open menu"><span></span></button>
+</header>
+
+<nav class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay-top">
+    <span class="name">African Summer Spa</span>
+    <button class="nav-close" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li class="active"><a href="price-list.html">Price List</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="tel:+27823709845">082 370 9845</a>
+    <a href="contact.html" class="btn btn-ghost-light">Book a Treatment</a>
+    <div class="socials">
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-head" style="padding-bottom:1.5rem;">
+    <span class="blob a"></span>
+    <span class="blob b"></span>
+    <div class="wrap page-head-inner">
+      <span class="eyebrow">Pricing</span>
+      <h1>Our<br><em style="font-style:italic;color:var(--ink);">treatments &amp; prices.</em></h1>
+      <p class="lede">Swipe through each category and tap a treatment for the full details.</p>
+    </div>
+  </section>
+
+  <section class="bg-white" style="padding-top:1rem;">
+    <div class="wrap">
+
+      <h3 style="margin-bottom:.2rem;">Body</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="body"></div>
+
+      <h3 style="margin:2.5rem 0 .2rem;">Facial</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="facial"></div>
+
+      <h3 style="margin:2.5rem 0 .2rem;">Medical Aesthetic</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="medical"></div>
+
+    </div>
+  </section>
+
+  <section class="bg-cream-dim" style="padding-top:2.5rem;">
+    <div class="wrap">
+      <a href="documents/2025-african-summer-spa-brochure.pdf" target="_blank" rel="noopener" class="pdf-card reveal">
+        <div class="pdf-icon">PDF</div>
+        <div>
+          <h4>Full Brochure (PDF)</h4>
+          <p>Prefer the whole price list on one page? Tap to view or download.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-sage">
+    <div class="wrap center reveal" style="max-width:560px;">
+      <span class="eyebrow" style="color:rgba(248,243,238,.7);">Prefer To Ask?</span>
+      <h2>We're happy to talk you through it</h2>
+      <p style="color:rgba(248,243,238,.85); margin:0 auto 1.6rem;">Call, WhatsApp or pop in — our therapists are glad to help you choose the right treatment.</p>
+      <a href="contact.html" class="btn btn-ghost-light">Contact Us</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================================
+     PRICE DATA — edit this list to add, remove or update treatments.
+     Leave "price" or "duration" as "" (empty quotes) if unsure — the
+     card will show "Ask us for pricing" instead of a wrong number.
+     =================================================================== -->
+<script>
+  window.priceData = {
+    body: [
+      { name: "Full Body Massage", duration: "60 min", price: "", description: "Slow, restorative bodywork designed to end a busy week and encourage a healing response deep within the body's system." },
+      { name: "Deep Tissue Massage", duration: "60 min", price: "", description: "Focused pressure on the areas holding the most tension, for lasting relief." },
+      { name: "Back, Neck & Shoulder", duration: "30 min", price: "", description: "A quick reset for anyone carrying stress in the upper body." },
+      { name: "Aromatherapy Massage", duration: "60 min", price: "", description: "A full body massage using essential oils chosen to relax and restore." }
+    ],
+    facial: [
+      { name: "Signature Facial", duration: "45 min", price: "", description: "A relaxing, therapeutic facial that leaves your skin luminous, balanced and deeply cared for." },
+      { name: "Deep Cleanse Facial", duration: "45 min", price: "", description: "A thorough cleanse and exfoliation to clear congestion and refresh dull skin." },
+      { name: "Hydration Boost", duration: "45 min", price: "", description: "An intensive moisture treatment for dry or dehydrated skin." },
+      { name: "LED Therapy", duration: "30 min", price: "", description: "Light-based therapy to support skin renewal and a healthy glow." }
+    ],
+    medical: [
+      { name: "Anti-Ageing Injections", duration: "", price: "", description: "Medical aesthetic treatment with Dr. Caymare, delivered with a clinical eye and a warm, human approach." },
+      { name: "Dermal Fillers", duration: "", price: "", description: "Restore volume and soften lines with Dr. Caymare." },
+      { name: "Skin Boosters", duration: "", price: "", description: "Deep hydration injectables for smoother, plumper skin." },
+      { name: "Skin Tag Removal", duration: "", price: "", description: "Quick, in-office removal with Dr. Caymare." }
+    ]
+  };
+</script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="name">African Summer Spa</div>
+        <p>Hoedspruit Private Hospital, Medical Centre, North, Unit 2. A considered space for skin, body and self — where clinical expertise meets the stillness of the Lowveld.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+27823709845">082 370 9845</a>
+        <a href="mailto:info@africansummerspa.co.za">info@africansummerspa.co.za</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h5>Trading Hours</h5>
+        <p>Tuesday – Saturday</p>
+        <p>08:00 – 17:00</p>
+        <p>By appointment only</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 African Summer Spa · Biancé Janse van Vuuren</span>
+      <span class="socials"><a href="about.html">About</a><a href="treatments.html">Treatments</a><a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- shared modal used to show treatment details -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div class="modal-media" id="modal-media"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <span class="modal-role" id="modal-role"></span>
+      <p class="desc" id="modal-desc"></p>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div id="modal-cta"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

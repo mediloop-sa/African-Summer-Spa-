@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatments | African Summer Spa</title>
+<meta name="description" content="Body, facial and medical aesthetic treatments at African Summer Spa, Hoedspruit — with Dr. Caymare for medical aesthetics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .filter-bar{ display:flex; flex-wrap:wrap; gap:.6rem; margin:2rem 0 0; }
+  .filter-btn{
+    padding:.6em 1.3em; border:1px solid var(--rose-deep); background:transparent;
+    color:var(--rose-deep); border-radius:999px; font-size:.85rem; letter-spacing:.03em;
+    transition:background .2s ease, color .2s ease;
+  }
+  .filter-btn.active, .filter-btn:hover{ background:var(--rose-deep); color:var(--white); }
+  .incl-list{ display:flex; flex-wrap:wrap; gap:.6rem; margin:1.4rem 0 0; }
+  .incl-list span{
+    font-size:.82rem; padding:.5em 1em; background:var(--cream-dim);
+    border:1px solid rgba(139,95,88,.16); color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="name">African Summer Spa</span>
+    <span class="sub">BIANCÉ JANSE VAN VUUREN</span>
+  </a>
+  <button class="hamburger" aria-label="Open menu"><span></span></button>
+</header>
+
+<nav class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay-top">
+    <span class="name">African Summer Spa</span>
+    <button class="nav-close" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li class="active"><a href="treatments.html">Treatments</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="price-list.html">Price List</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="tel:+27823709845">082 370 9845</a>
+    <a href="contact.html" class="btn btn-ghost-light">Book a Treatment</a>
+    <div class="socials">
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-head" style="padding-bottom:1.5rem;">
+    <span class="blob a"></span>
+    <div class="wrap page-head-inner">
+      <span class="eyebrow">Lavish Treatments</span>
+      <h1>Our most<br><em style="font-style:italic;color:var(--ink);">relaxing offerings.</em></h1>
+      <p class="lede">Take a moment for yourself. Every treatment is shaped around how you want to feel when you leave.</p>
+    </div>
+    <div class="wrap filter-bar">
+      <button class="filter-btn active" data-target="all">All Treatments</button>
+      <button class="filter-btn" data-target="body">Body</button>
+      <button class="filter-btn" data-target="facial">Facial</button>
+      <button class="filter-btn" data-target="medical">Medical Aesthetic</button>
+    </div>
+  </section>
+
+  <section class="bg-white" style="padding-top:1.5rem;">
+    <div class="wrap">
+
+      <div id="body" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Body</span>
+            <h2>Massage &amp; Bodywork</h2>
+          </div>
+          <a href="price-list.html" class="btn">View Price List</a>
+        </div>
+        <p class="lede">The perfect way to end a busy week. Awaken your senses and renew your soul with a treatment that encourages a healing response deep within your body's system — reach ultimate relaxation and leave feeling revitalised, ready for whatever your week brings.</p>
+        <div class="incl-list">
+          <span>Full Body Massage</span>
+          <span>Deep Tissue</span>
+          <span>Back, Neck &amp; Shoulder</span>
+          <span>Aromatherapy</span>
+        </div>
+      </div>
+
+      <div id="facial" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Face</span>
+            <h2>Facials</h2>
+          </div>
+          <a href="price-list.html" class="btn">View Price List</a>
+        </div>
+        <p class="lede">A treatment that fits into any busy schedule. Revitalise your body, mind and soul with relaxing, therapeutic, invigorating facials — you'll leave feeling revived, rejuvenated and completely centred.</p>
+        <div class="incl-list">
+          <span>Signature Facial</span>
+          <span>Deep Cleanse</span>
+          <span>Hydration Boost</span>
+          <span>LED Therapy</span>
+        </div>
+      </div>
+
+      <div id="medical" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Medical Aesthetic</span>
+            <h2>With Dr. Caymare</h2>
+          </div>
+          <a href="contact.html" class="btn">Enquire</a>
+        </div>
+        <p class="lede">Medical aesthetic treatment with Dr. Caymare, delivered with a clinical eye and a warm, human approach.</p>
+        <div class="incl-list">
+          <span>Anti-Ageing Injections</span>
+          <span>Dermal Fillers</span>
+          <span>Skin Tag Removal</span>
+          <span>Skin Boosters</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-rose-deep">
+    <div class="wrap center reveal" style="max-width:560px;">
+      <span class="eyebrow" style="color:rgba(248,243,238,.7);">Ready When You Are</span>
+      <h2>Book your appointment today</h2>
+      <p style="color:rgba(248,243,238,.85); margin:0 auto 1.6rem;">By appointment only, Tuesday – Saturday, 08:00 – 17:00.</p>
+      <a href="contact.html" class="btn btn-ghost-light">Book a Treatment</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="name">African Summer Spa</div>
+        <p>Hoedspruit Private Hospital, Medical Centre, North, Unit 2. A considered space for skin, body and self — where clinical expertise meets the stillness of the Lowveld.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+27823709845">082 370 9845</a>
+        <a href="mailto:info@africansummerspa.co.za">info@africansummerspa.co.za</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h5>Trading Hours</h5>
+        <p>Tuesday – Saturday</p>
+        <p>08:00 – 17:00</p>
+        <p>By appointment only</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 African Summer Spa · Biancé Janse van Vuuren</span>
+      <span class="socials"><a href="about.html">About</a><a href="treatments.html">Treatments</a><a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

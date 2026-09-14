@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | African Summer Spa</title>
+<meta name="description" content="African Summer Spa began in 1994 in Hoedspruit and is now led by Biancé Janse van Vuuren, bringing holistic wellbeing treatments to the Lowveld.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="name">African Summer Spa</span>
+    <span class="sub">BIANCÉ JANSE VAN VUUREN</span>
+  </a>
+  <button class="hamburger" aria-label="Open menu"><span></span></button>
+</header>
+
+<nav class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay-top">
+    <span class="name">African Summer Spa</span>
+    <button class="nav-close" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="about.html">About</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="price-list.html">Price List</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="tel:+27823709845">082 370 9845</a>
+    <a href="contact.html" class="btn btn-ghost-light">Book a Treatment</a>
+    <div class="socials">
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="page-head">
+    <span class="blob a"></span>
+    <span class="blob b"></span>
+    <div class="wrap page-head-inner">
+      <span class="eyebrow">Our Story</span>
+      <h1>Born from Hoedspruit's<br><em style="font-style:italic;color:var(--ink);">two summers.</em></h1>
+      <p class="lede">A considered space for skin, body and self, where clinical expertise meets the stillness of the Lowveld.</p>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">Since 1994</span>
+        <h2>Advanced treatments, holistic wellbeing</h2>
+        <p>Located in an area known for its two summers lies African Summer Spa. The spa is aimed at providing guests with advanced treatments focused on holistic wellbeing.</p>
+        <p>Hoedspruit is known for its breathtaking nature and wildlife — the very thing the spa's creator wanted to showcase and bring into the experience at the spa, delivering unparalleled service in an unforgettable setting.</p>
+        <p>The spa originated in 1994 to give guests the opportunity to experience not only the natural beauty of the area, but its serene, calming atmosphere. The design of the space allows guests to unwind with a therapeutic treatment, or simply beat the heat by enjoying an afternoon poolside with refreshments.</p>
+      </div>
+      <div class="split-media reveal">
+        <img src="images/interior-chair.jpg" alt="Treatment room interior at African Summer Spa, with green tile and natural textures.">
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-dim">
+    <div class="wrap split reverse">
+      <div class="split-media reveal">
+        <img src="images/decor-plant.jpg" alt="Styling detail inside African Summer Spa.">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">New Ownership, 2021</span>
+        <h2>Meet Biancé</h2>
+        <p>African Summer Spa changed ownership in 2021. Biancé Janse van Vuuren, the current owner, is a Hoedspruit local who jumped at the opportunity to share her passion and expertise in health and wellness with every guest.</p>
+        <p>African Summer Spa is the perfect place to escape the hustle and bustle of everyday life, to embrace wellness and ultimate relaxation.</p>
+        <a href="contact.html" class="btn" style="margin-top:.5rem;">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="wrap">
+      <div class="reveal" style="max-width:600px;">
+        <span class="eyebrow">Our Staff</span>
+        <h2>Meet the team</h2>
+        <p class="lede">African Summer Spa is pleased to have a skilled team treating every guest in the most professional way possible. Tap a face to read more.</p>
+      </div>
+      <div class="team-grid reveal" id="team-grid" style="margin-top:2.5rem;">
+        <!-- cards are generated from staffData below by script.js -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================================
+     STAFF DATA — edit this list to add, remove or update team members.
+     "img" can be left as null (no quotes) until you have a photo —
+     the card will show a "Photo coming soon" placeholder instead.
+     =================================================================== -->
+<script>
+  window.staffData = [
+    {
+      name: "Biancé Janse van Vuuren",
+      role: "Owner & Skin Therapist",
+      img: "images/therapist.jpg",
+      bio: "Biancé is a Hoedspruit local who took over African Summer Spa in 2021, bringing her passion and expertise in health and wellness to every guest who walks through the door."
+    },
+    {
+      name: "Dr. Caymare",
+      role: "Medical Aesthetics",
+      img: null,
+      bio: "Dr. Caymare leads our medical aesthetic treatments, including anti-ageing injections, dermal fillers, skin boosters and skin tag removal — delivered with a clinical eye and a warm, human approach."
+    }
+    // To add another team member later, copy the block above (from the
+    // opening { to the closing },) and fill in their real details —
+    // this comment and the code itself are never shown to site visitors,
+    // only the finished cards you create from it are.
+  ];
+</script>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="name">African Summer Spa</div>
+        <p>Hoedspruit Private Hospital, Medical Centre, North, Unit 2. A considered space for skin, body and self — where clinical expertise meets the stillness of the Lowveld.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+27823709845">082 370 9845</a>
+        <a href="mailto:info@africansummerspa.co.za">info@africansummerspa.co.za</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h5>Trading Hours</h5>
+        <p>Tuesday – Saturday</p>
+        <p>08:00 – 17:00</p>
+        <p>By appointment only</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 African Summer Spa · Biancé Janse van Vuuren</span>
+      <span class="socials"><a href="about.html">About</a><a href="treatments.html">Treatments</a><a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- shared modal used to show team member / treatment details -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div class="modal-media" id="modal-media"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <span class="modal-role" id="modal-role"></span>
+      <p class="desc" id="modal-desc"></p>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div id="modal-cta"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
