@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Price List | African Summer Spa</title>
-<meta name="description" content="View or download the African Summer Spa pricing brochure for body, facial and medical aesthetic treatments.">
+<meta name="description" content="View or download the African Summer Spa pricing brochure for body, facial, mani & pedi, grooming and medical aesthetic treatments.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -56,15 +56,23 @@
   <section class="bg-white" style="padding-top:1rem;">
     <div class="wrap">
 
-      <h3 style="margin-bottom:.2rem;">Body</h3>
+      <h3 class="price-cat-heading">Body</h3>
       <p class="swipe-hint">Swipe to explore →</p>
       <div class="price-scroll reveal" data-price-category="body"></div>
 
-      <h3 style="margin:2.5rem 0 .2rem;">Facial</h3>
+      <h3 class="price-cat-heading">Facial</h3>
       <p class="swipe-hint">Swipe to explore →</p>
       <div class="price-scroll reveal" data-price-category="facial"></div>
 
-      <h3 style="margin:2.5rem 0 .2rem;">Medical Aesthetic</h3>
+      <h3 class="price-cat-heading">Mani &amp; Pedi</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="manipedi"></div>
+
+      <h3 class="price-cat-heading">Grooming</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="grooming"></div>
+
+      <h3 class="price-cat-heading">Medical Aesthetic</h3>
       <p class="swipe-hint">Swipe to explore →</p>
       <div class="price-scroll reveal" data-price-category="medical"></div>
 
@@ -112,6 +120,19 @@
       { name: "Deep Cleanse Facial", duration: "45 min", price: "", description: "A thorough cleanse and exfoliation to clear congestion and refresh dull skin." },
       { name: "Hydration Boost", duration: "45 min", price: "", description: "An intensive moisture treatment for dry or dehydrated skin." },
       { name: "LED Therapy", duration: "30 min", price: "", description: "Light-based therapy to support skin renewal and a healthy glow." }
+    ],
+    manipedi: [
+      { name: "Buff & Shine", duration: "30 min", price: "", description: "A no-polish nail treatment that buffs nails to a natural, healthy shine." },
+      { name: "Classic Manicure", duration: "45 min", price: "", description: "Shape, cuticle care, hand massage and polish of your choice." },
+      { name: "Classic Pedicure", duration: "60 min", price: "", description: "A relaxing foot soak, exfoliation, shape, cuticle care and polish." },
+      { name: "Gel Overlay Manicure", duration: "45 min", price: "", description: "A durable gel finish over your natural nails for long-lasting shine." },
+      { name: "Gel Overlay Pedicure", duration: "60 min", price: "", description: "The full pedicure experience finished with a chip-resistant gel overlay." }
+    ],
+    grooming: [
+      { name: "Eyebrow Shape & Tint", duration: "20 min", price: "", description: "Shape and tint to define and frame the eyes." },
+      { name: "Underarm Wax", duration: "15 min", price: "", description: "Quick, thorough underarm waxing." },
+      { name: "Leg Wax", duration: "45 min", price: "", description: "Full or half leg waxing for smooth, longer-lasting results." },
+      { name: "IPL Bikini", duration: "20 min", price: "", description: "Intense pulsed light hair reduction treatment for the bikini area." }
     ],
     medical: [
       { name: "Anti-Ageing Injections", duration: "", price: "", description: "Medical aesthetic treatment with Dr. Caymare, delivered with a clinical eye and a warm, human approach." },
