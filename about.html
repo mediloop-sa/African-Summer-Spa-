@@ -88,9 +88,9 @@
       <div class="reveal" style="max-width:600px;">
         <span class="eyebrow">Our Staff</span>
         <h2>Meet the team</h2>
-        <p class="lede">African Summer Spa is pleased to have a skilled team treating every guest in the most professional way possible. Tap a face to read more.</p>
+        <p class="lede">African Summer Spa is pleased to have a skilled team treating every guest in the most professional way possible. Tap a card to read more.</p>
       </div>
-      <div class="team-grid reveal" id="team-grid" style="margin-top:2.5rem;">
+      <div class="team-accordion reveal" id="team-accordion" style="margin-top:2.5rem;">
         <!-- cards are generated from staffData below by script.js -->
       </div>
     </div>
@@ -101,7 +101,9 @@
 <!-- ===================================================================
      STAFF DATA — edit this list to add, remove or update team members.
      "img" can be left as null (no quotes) until you have a photo —
-     the card will show a "Photo coming soon" placeholder instead.
+     the card will show a placeholder pattern instead.
+     There are 6 slots shown on the page; if you list fewer than 6 here,
+     script.js will automatically fill the rest with "Coming Soon" cards.
      =================================================================== -->
 <script>
   window.staffData = [
@@ -116,11 +118,33 @@
       role: "Medical Aesthetics",
       img: null,
       bio: "Dr. Caymare leads our medical aesthetic treatments, including anti-ageing injections, dermal fillers, skin boosters and skin tag removal — delivered with a clinical eye and a warm, human approach."
+    },
+    {
+      name: "Staff 3",
+      role: "Coming Soon",
+      img: null,
+      bio: "We're growing our team — details for this therapist are coming soon."
+    },
+    {
+      name: "Staff 4",
+      role: "Coming Soon",
+      img: null,
+      bio: "We're growing our team — details for this therapist are coming soon."
+    },
+    {
+      name: "Staff 5",
+      role: "Coming Soon",
+      img: null,
+      bio: "We're growing our team — details for this therapist are coming soon."
+    },
+    {
+      name: "Staff 6",
+      role: "Coming Soon",
+      img: null,
+      bio: "We're growing our team — details for this therapist are coming soon."
     }
-    // To add another team member later, copy the block above (from the
-    // opening { to the closing },) and fill in their real details —
-    // this comment and the code itself are never shown to site visitors,
-    // only the finished cards you create from it are.
+    // To add a real team member later, replace one of the "Staff N"
+    // placeholder blocks above with their real name, role, img and bio.
   ];
 </script>
 
@@ -150,21 +174,6 @@
     </div>
   </div>
 </footer>
-
-<!-- shared modal used to show team member / treatment details -->
-<div class="modal-overlay" id="modal-overlay">
-  <div class="modal-box">
-    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
-    <div class="modal-media" id="modal-media"><img id="modal-img" src="" alt=""></div>
-    <div class="modal-body">
-      <h3 id="modal-title"></h3>
-      <span class="modal-role" id="modal-role"></span>
-      <p class="desc" id="modal-desc"></p>
-      <div class="modal-meta" id="modal-meta"></div>
-      <div id="modal-cta"></div>
-    </div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
