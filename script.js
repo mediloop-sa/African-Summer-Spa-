@@ -149,6 +149,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ---------- brand list (products.html) ---------- */
+  var brandList = document.getElementById('brand-list');
+  if (brandList && window.brandData) {
+    brandList.innerHTML = window.brandData.map(function (b, i) {
+      var num = String(i + 1).padStart(2, '0');
+      return (
+        '<button class="brand-row" data-index="' + i + '">' +
+          '<span class="br-left">' +
+            '<span class="br-num">' + num + '</span>' +
+            '<span class="br-name">' + b.name + '</span>' +
+          '</span>' +
+          '<span class="br-right">' +
+            '<span class="br-cat">' + (b.category || '') + '</span>' +
+            '<span class="br-arrow">→</span>' +
+          '</span>' +
+        '</button>'
+      );
+    }).join('');
+
+    brandList.querySelectorAll('.brand-row').forEach(function (row) {
+      row.addEventListener('click', function () {
+        var b = window.brandData[Number(row.getAttribute('data-index'))];
+        openModal({
+          title: b.name,
+          role: b.category,
+          desc: b.description,
+          img: b.img,
+          ctaText: 'Book a Treatment',
+          ctaHref: 'https://wa.me/27823709845?text=' + encodeURIComponent(b.whatsapp)
+        });
+      });
+    });
+  }
+
   /* ---------- price cards (price-list.html) ---------- */
   var priceCategories = document.querySelectorAll('[data-price-category]');
   if (priceCategories.length && window.priceData) {
