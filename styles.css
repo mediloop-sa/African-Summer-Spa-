@@ -580,6 +580,8 @@ hr.rule{
 .modal-meta .m-value{ font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
 
 /* ---------- interactive price cards ---------- */
+.price-cat-heading{ margin:2.5rem 0 .5rem; }
+.price-cat-heading:first-of-type{ margin-top:0; }
 .price-tabs{ display:flex; flex-wrap:wrap; gap:.6rem; margin:2rem 0 2.5rem; }
 .price-scroll{
   display:flex; gap:1.1rem;
@@ -603,7 +605,7 @@ hr.rule{
 .price-card .pc-name{ font-family:var(--serif); font-size:1.2rem; color:var(--ink); }
 .price-card .pc-meta{ font-size:.82rem; color:var(--ink-soft); }
 .price-card .pc-tap{ margin-top:auto; font-size:.68rem; letter-spacing:.08em; color:var(--rose-deep); }
-.swipe-hint{ font-style:italic; color:var(--ink-soft); font-size:.9rem; margin:-1.6rem 0 1.5rem; }
+.swipe-hint{ font-style:italic; color:var(--ink-soft); font-size:.9rem; margin:0 0 1.2rem; }
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
