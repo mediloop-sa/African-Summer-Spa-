@@ -612,3 +612,69 @@ hr.rule{
   .reveal{ transition:none; opacity:1; transform:none; }
   .nav-overlay{ transition:none; }
 }
+
+/* ---------- desktop / tablet nav bar ----------
+   Below 861px: hamburger + full-screen overlay menu (unchanged).
+   861px and up: the same nav-overlay markup is repurposed into a
+   slim horizontal nav bar sitting inline with the header, and the
+   hamburger button is hidden. No HTML changes needed. */
+@media (min-width: 861px){
+  .hamburger{ display:none; }
+
+  .nav-overlay{
+    position:fixed;
+    inset:0 0 auto 0;
+    height:auto;
+    background:transparent;
+    color:var(--ink);
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    gap:2.5rem;
+    padding:1.1rem clamp(1.25rem, 4vw, 3rem);
+    transform:none;
+    transition:none;
+    pointer-events:none;
+  }
+  .nav-overlay-top{ display:none; }
+
+  .nav-links{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:2.2rem;
+    margin:0;
+    pointer-events:auto;
+  }
+  .nav-links li a{
+    font-family:var(--sans);
+    font-size:.9rem;
+    letter-spacing:.04em;
+    font-weight:500;
+    color:var(--ink);
+    padding:0;
+    border-bottom:2px solid transparent;
+  }
+  .nav-links li a:hover{ opacity:1; color:var(--rose-deep); border-color:transparent; }
+  .nav-links li.active a{ opacity:1; font-style:normal; color:var(--rose-deep); border-color:var(--rose-deep); }
+
+  .nav-overlay-bottom{
+    border:none;
+    padding:0;
+    gap:0;
+    pointer-events:auto;
+  }
+  .nav-overlay-bottom a[href^="tel:"],
+  .nav-overlay-bottom .socials{ display:none; }
+  .nav-overlay-bottom .btn-ghost-light{
+    border-color:var(--rose-deep);
+    color:var(--rose-deep);
+  }
+  .nav-overlay-bottom .btn-ghost-light:hover{
+    background:var(--rose-deep);
+    color:var(--white);
+  }
+
+  body.nav-open{ overflow:auto; }
+}
