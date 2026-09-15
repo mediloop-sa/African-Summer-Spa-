@@ -110,30 +110,42 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeModal();
   });
 
-  /* ---------- team grid (about.html) ---------- */
-  var teamGrid = document.getElementById('team-grid');
-  if (teamGrid && window.staffData) {
-    window.staffData.forEach(function (person) {
-      var card = document.createElement('button');
-      card.className = 'team-card';
-      var mediaHtml = person.img
-        ? '<img src="' + person.img + '" alt="' + person.name + '">'
-        : '<div class="no-photo">Photo coming soon</div>';
-      card.innerHTML = mediaHtml +
-        '<div class="team-card-label">' +
-        '<span class="tc-name">' + person.name + '</span>' +
-        '<span class="tc-role">' + person.role + '</span>' +
-        '<span class="tc-tap">TAP TO READ MORE</span>' +
-        '</div>';
-      card.addEventListener('click', function () {
-        openModal({
-          title: person.name,
-          role: person.role,
-          desc: person.bio,
-          img: person.img
-        });
+  /* ---------- team accordion (about.html) ---------- */
+  var teamAccordion = document.getElementById('team-accordion');
+  if (teamAccordion) {
+    var items = (window.staffData || []).slice(0, 6);
+    while (items.length < 6) {
+      items.push({
+        name: 'Staff ' + (items.length + 1),
+        role: 'Coming Soon',
+        img: null,
+        bio: "We're growing our team — details for this therapist are coming soon."
       });
-      teamGrid.appendChild(card);
+    }
+
+    teamAccordion.innerHTML = items.map(function (m, i) {
+      var bgStyle = m.img ? ' style="background-image:url(\'' + m.img + '\')"' : '';
+      var cardClass = 'team-card' + (m.img ? '' : ' placeholder');
+      return (
+        '<div class="' + cardClass + '" data-index="' + i + '"' + bgStyle + '>' +
+          '<div class="label">' + m.name + '</div>' +
+          '<div class="detail">' +
+            '<h3>' + m.name + '</h3>' +
+            '<span class="role">' + (m.role || '') + '</span>' +
+            '<p>' + (m.bio || '') + '</p>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    teamAccordion.querySelectorAll('.team-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var isOpen = card.classList.contains('expanded');
+        teamAccordion.querySelectorAll('.team-card').forEach(function (c) {
+          c.classList.remove('expanded');
+        });
+        if (!isOpen) card.classList.add('expanded');
+      });
     });
   }
 
