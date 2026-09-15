@@ -336,7 +336,7 @@ hr.rule{
 .strip div h4{ color:inherit; margin-bottom:.3em; font-size:1.05rem; }
 .strip div p{ margin:0; opacity:.85; font-size:0.94rem; }
 
-/* products grid */
+/* products grid (legacy — no longer used on products.html, kept in case referenced elsewhere) */
 .brand-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -494,6 +494,50 @@ hr.rule{
 
 @media (max-width: 860px){
   .team-card.expanded{ height:380px; }
+}
+
+/* ---------- interactive brand list (products.html) ---------- */
+.brand-list{
+  display:flex;
+  flex-direction:column;
+}
+.brand-row{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1.5rem;
+  width:100%;
+  padding:1.7rem 0;
+  border:none; border-bottom:1px solid rgba(139,95,88,.18);
+  background:none; text-align:left;
+  cursor:pointer;
+}
+.brand-row:first-child{ border-top:1px solid rgba(139,95,88,.18); }
+.brand-row .br-left{
+  display:flex; align-items:baseline; gap:1.4rem;
+}
+.brand-row .br-num{
+  font-family:var(--sans); font-size:.78rem; color:var(--ink-soft);
+  letter-spacing:.05em; min-width:26px;
+}
+.brand-row .br-name{
+  font-family:var(--serif); font-size:clamp(1.35rem, 3vw, 2rem);
+  color:var(--ink); transition:color .25s ease;
+}
+.brand-row .br-right{
+  display:flex; align-items:center; gap:1rem; flex-shrink:0;
+}
+.brand-row .br-cat{
+  font-family:var(--sans); font-size:.7rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--sage-deep);
+}
+.brand-row .br-arrow{
+  font-size:1.15rem; color:var(--rose-deep);
+  transition:transform .25s ease;
+}
+.brand-row:hover .br-name{ color:var(--rose-deep); }
+.brand-row:hover .br-arrow{ transform:translateX(5px); }
+
+@media (max-width: 560px){
+  .brand-row .br-cat{ display:none; }
 }
 
 /* ---------- modal ---------- */
