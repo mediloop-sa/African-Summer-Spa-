@@ -704,8 +704,10 @@ hr.rule{
   background:linear-gradient(
     180deg,
     rgba(248,243,238,.88) 0%,
-    rgba(248,243,238,.82) 55%,
-    rgba(248,243,238,.92) 100%
+    rgba(248,243,238,.82) 45%,
+    rgba(248,243,238,.55) 58%,
+    rgba(248,243,238,.12) 68%,
+    rgba(248,243,238,0) 78%
   );
 }
 
@@ -721,8 +723,8 @@ hr.rule{
   backdrop-filter:blur(22px) saturate(140%);
   -webkit-backdrop-filter:blur(22px) saturate(140%);
   background:rgba(248,243,238,.32);
-  mask-image:linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0) 50%);
-  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0) 50%);
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 16%, rgba(0,0,0,0) 45%);
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 16%, rgba(0,0,0,0) 45%);
   pointer-events:none;
 }
 
