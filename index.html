@@ -45,26 +45,17 @@
 
   <!-- ===================================================================
        SPLASH — the very first thing a visitor sees: logo mark, wordmark
-       and tagline, before scrolling into the rest of the homepage.
-       Swap the inline SVG below for a real logo file whenever it's ready.
+       and tagline over a background photo, before scrolling into the
+       rest of the homepage.
        =================================================================== -->
   <section class="site-splash">
+    <div class="splash-bg">
+      <img src="images/splash-bg.jpg" alt="" aria-hidden="true">
+    </div>
     <span class="blob a"></span>
     <span class="blob b"></span>
     <div class="wrap splash-inner reveal">
-      <svg class="splash-logo" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 150 C55 120, 50 95, 65 78 C75 66, 92 64, 100 75 C108 86, 104 100, 96 108 C90 114, 92 122, 100 126 C110 131, 100 145, 86 143 C74 141, 62 148, 60 150 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M64 88 C67 84, 72 84, 75 88" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M130 45 C118 55, 112 75, 118 95 C122 108, 118 118, 112 124 C124 134, 148 136, 162 128 C170 123, 168 112, 160 106 C170 100, 174 82, 166 65 C158 48, 142 40, 130 45 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M124 74 C127 70, 132 70, 135 74" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M148 74 C151 70, 156 70, 159 74" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M136 92 C138 96, 142 96, 144 92" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        <ellipse cx="139" cy="103" rx="6" ry="3" fill="var(--gold)" opacity="0.85"/>
-        <path d="M116 121 L108 138 M112 130 L118 132" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M212 55 C198 62, 190 80, 196 98 C200 110, 196 122, 188 128 L188 150 C210 156, 236 152, 248 138 C256 128, 252 114, 244 108 C254 100, 256 80, 246 66 C236 52, 222 50, 212 55 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M206 84 C209 80, 214 80, 217 84" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M224 138 L224 150" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img class="splash-logo" src="images/logo.png" alt="African Summer Spa">
       <div class="splash-word">African Summer Spa</div>
       <span class="splash-tagline">Skin&nbsp;|&nbsp;Clinic&nbsp;|&nbsp;Aesthetics</span>
       <a href="#discover" class="btn splash-cta">Contact Us</a>
@@ -122,20 +113,31 @@
     </div>
   </section>
 
-  <section class="bg-sage">
-    <div class="wrap strip">
-      <div class="reveal">
-        <h4>Trading Hours</h4>
-        <p>Tuesday – Saturday<br>08:00 – 17:00</p>
+  <!-- ===================================================================
+       GIFT VOUCHERS — replaces the old trading-hours strip. No payment
+       backend on this site, so "purchase" here opens WhatsApp pre-filled
+       with the chosen amount so Biancé can arrange payment directly.
+       =================================================================== -->
+  <section class="bg-sage voucher-section">
+    <div class="wrap center reveal" style="max-width:620px;">
+      <span class="eyebrow" style="color:rgba(248,243,238,.7);">Gift Vouchers</span>
+      <h2>Give the gift of rest</h2>
+      <p style="color:rgba(248,243,238,.85); margin:0 auto 2rem;">Treat someone to a moment of stillness. Choose an amount below and we'll arrange the rest over WhatsApp.</p>
+
+      <div class="voucher-amounts" id="voucher-amounts">
+        <button type="button" class="voucher-pill" data-amount="R500">R500</button>
+        <button type="button" class="voucher-pill" data-amount="R1 000">R1 000</button>
+        <button type="button" class="voucher-pill" data-amount="R1 500">R1 500</button>
+        <button type="button" class="voucher-pill" data-amount="a custom amount">Custom Amount</button>
       </div>
-      <div class="reveal">
-        <h4>Find Us</h4>
-        <p>Hoedspruit Private Hospital<br>Medical Centre, North · Unit 2</p>
-      </div>
-      <div class="reveal">
-        <h4>Book a Treatment</h4>
-        <p><a href="tel:+27823709845" style="color:inherit;text-decoration:underline;">082 370 9845</a><br>By appointment only</p>
-      </div>
+
+      <a
+        href="https://wa.me/27823709845?text=Hi!%20I'd%20like%20to%20purchase%20a%20gift%20voucher."
+        id="voucher-cta"
+        class="btn btn-ghost-light"
+        target="_blank"
+        rel="noopener"
+      >Purchase via WhatsApp</a>
     </div>
   </section>
 
@@ -160,21 +162,21 @@
       <p class="lede">African Summer Spa is the perfect place to step away from everyday life. Come alone, or bring your favourite people.</p>
     </div>
     <div class="wrap">
-      <div class="review-photo reveal" style="margin-top:2.5rem;">
+      <div class="review-photo" style="margin-top:2.5rem;">
         <img src="images/team-clients.jpg" alt="Three friends laughing together on the veranda at African Summer Spa.">
         <div class="review-scrim"></div>
         <div class="review-quotes">
-          <div class="review-quote">
+          <div class="review-quote reveal">
             <span class="rq-stars">★★★★★</span>
             <p>Warm, professional service — booking and payment were refreshingly easy.</p>
             <span class="rq-name">Axel Kuhn</span>
           </div>
-          <div class="review-quote">
+          <div class="review-quote reveal">
             <span class="rq-stars">★★★★★</span>
             <p>The massage was worth every cent — spacious, modern and deeply restorative.</p>
             <span class="rq-name">Pshiri Petja</span>
           </div>
-          <div class="review-quote">
+          <div class="review-quote reveal">
             <span class="rq-stars">★★★★★</span>
             <p>A relaxing experience with professional staff and reasonably priced treatments.</p>
             <span class="rq-name">Richard Grove</span>
