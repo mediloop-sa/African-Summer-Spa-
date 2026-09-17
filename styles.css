@@ -689,6 +689,22 @@ hr.rule{
   overflow:hidden;
   text-align:center;
 }
+.splash-bg{
+  position:absolute; inset:0; z-index:0;
+}
+.splash-bg img{
+  width:100%; height:100%; object-fit:cover;
+}
+.splash-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(248,243,238,.88) 0%,
+    rgba(248,243,238,.82) 55%,
+    rgba(248,243,238,.92) 100%
+  );
+}
 .splash-inner{
   position:relative; z-index:1;
   max-width:520px;
@@ -699,7 +715,6 @@ hr.rule{
 }
 .splash-logo{
   width:220px; height:auto;
-  color:var(--ink);
   margin-bottom:1.6rem;
 }
 .splash-word{
@@ -722,3 +737,93 @@ hr.rule{
   color:var(--rose-deep);
 }
 .splash-cta:hover{ background:var(--rose-deep); border-color:var(--rose-deep); color:var(--white); }
+
+/* ---------- gift vouchers (index.html) — CHANGED: replaces old trading-hours strip ---------- */
+.voucher-section .btn{ margin-top:.4rem; }
+.voucher-amounts{
+  display:flex; flex-wrap:wrap; justify-content:center;
+  gap:.8rem;
+  margin-bottom:1.8rem;
+}
+.voucher-pill{
+  padding:.7em 1.5em;
+  border:1px solid rgba(248,243,238,.5);
+  border-radius:999px;
+  background:transparent;
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:.88rem;
+  letter-spacing:.02em;
+  transition:background .2s ease, border-color .2s ease, color .2s ease;
+}
+.voucher-pill:hover{ border-color:var(--cream); }
+.voucher-pill.active{
+  background:var(--cream);
+  color:var(--sage-deep);
+  border-color:var(--cream);
+}
+
+/* ---------- review photo overlay (index.html) — CHANGED: fixed overflow + added stagger ---------- */
+.review-photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:2px;
+  min-height:600px;
+}
+.review-photo img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+}
+.review-scrim{
+  position:absolute; inset:0;
+  background:linear-gradient(to top,
+    rgba(228,211,203,.96) 0%,
+    rgba(228,211,203,.85) 30%,
+    rgba(228,211,203,.25) 65%,
+    rgba(228,211,203,0) 100%
+  );
+}
+.review-quotes{
+  position:absolute; inset:0; z-index:2;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  gap:1.4rem;
+  padding:2.2rem clamp(1.25rem, 4vw, 3rem) 2.4rem;
+}
+.review-quote{ max-width:360px; }
+.review-quote.reveal{ transition-delay:0s; }
+.review-quote.reveal:nth-child(2){ transition-delay:.15s; }
+.review-quote.reveal:nth-child(3){ transition-delay:.3s; }
+.rq-stars{
+  display:block;
+  color:var(--gold);
+  font-size:.8rem;
+  letter-spacing:.12em;
+  margin-bottom:.35rem;
+}
+.review-quote p{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.05rem;
+  line-height:1.35;
+  color:var(--ink);
+  margin:0 0 .35rem;
+  max-width:none;
+}
+.rq-name{
+  display:block;
+  font-family:var(--sans);
+  font-size:.7rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+@media (min-width: 761px){
+  .review-photo{ min-height:0; aspect-ratio:16/9; }
+  .review-quotes{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:2rem;
+  }
+}
