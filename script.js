@@ -133,15 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- team accordion (about.html) ---------- */
   var teamAccordion = document.getElementById('team-accordion');
   if (teamAccordion) {
-    var items = (window.staffData || []).slice(0, 6);
-    while (items.length < 6) {
-      items.push({
-        name: 'Staff ' + (items.length + 1),
-        role: 'Coming Soon',
-        img: null,
-        bio: "We're growing our team — details for this therapist are coming soon."
-      });
-    }
+    var items = window.staffData || [];
 
     teamAccordion.innerHTML = items.map(function (m, i) {
       var bgStyle = m.img ? ' style="background-image:url(\'' + m.img + '\')"' : '';
