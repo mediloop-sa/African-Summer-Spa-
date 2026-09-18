@@ -1,259 +1,214 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var openBtn = document.querySelector('.hamburger');
-  var closeBtn = document.querySelector('.nav-close');
-  var overlay = document.querySelector('.nav-overlay');
-  var body = document.body;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | African Summer Spa</title>
+<meta name="description" content="The skincare and treatment brands African Summer Spa proudly works with — face brands including Lamelle, Environ, Heliocare, Mesoestetic and Micci, and body brands including Biosculpture and Spaliscious.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-  function openNav () {
-    overlay.classList.add('open');
-    body.classList.add('nav-open');
-  }
-  function closeNav () {
-    overlay.classList.remove('open');
-    body.classList.remove('nav-open');
-  }
-  if (openBtn) openBtn.addEventListener('click', openNav);
-  if (closeBtn) closeBtn.addEventListener('click', closeNav);
-  if (overlay) {
-    overlay.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', closeNav);
-    });
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeNav();
-  });
+<header class="site-header">
+  <a href="index.html" class="brand">
+    <span class="name">African Summer Spa</span>
+    <span class="sub">CLINICAL | SPA | AESTHETICS</span>
+  </a>
+  <button class="hamburger" aria-label="Open menu"><span></span></button>
+</header>
 
-  /* simple reveal-on-scroll */
-  var revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('in'); });
-  }
+<nav class="nav-overlay" aria-hidden="true">
+  <div class="nav-overlay-top">
+    <span class="name">African Summer Spa</span>
+    <button class="nav-close" aria-label="Close menu">✕</button>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li class="active"><a href="products.html">Products</a></li>
+    <li><a href="price-list.html">Price List</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="tel:+27823709845">082 370 9845</a>
+    <a href="contact.html" class="btn btn-ghost-light">Book a Treatment</a>
+    <div class="socials">
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</nav>
 
-  /* ---------- gift voucher amount picker (index.html) ----------
-     FIX: the pills previously had no click behaviour at all — the
-     "active" state and the WhatsApp link never updated. This wires
-     them up: clicking a pill highlights it and rewrites the
-     pre-filled WhatsApp message to include the chosen amount. */
-  var voucherWrap = document.getElementById('voucher-amounts');
-  var voucherCta = document.getElementById('voucher-cta');
-  if (voucherWrap && voucherCta) {
-    var voucherPills = voucherWrap.querySelectorAll('.voucher-pill');
-    voucherPills.forEach(function (pill) {
-      pill.addEventListener('click', function () {
-        voucherPills.forEach(function (p) { p.classList.remove('active'); });
-        pill.classList.add('active');
-        var amount = pill.getAttribute('data-amount');
-        var message = "Hi! I'd like to purchase a gift voucher for " + amount + ".";
-        voucherCta.href = 'https://wa.me/27823709845?text=' + encodeURIComponent(message);
-      });
-    });
-  }
+<main>
 
-  /* ---------- generic modal ---------- */
-  var modalOverlay = document.getElementById('modal-overlay');
-  var modalClose = document.getElementById('modal-close');
-  var modalImg = document.getElementById('modal-img');
-  var modalMedia = document.getElementById('modal-media');
-  var modalTitle = document.getElementById('modal-title');
-  var modalRole = document.getElementById('modal-role');
-  var modalDesc = document.getElementById('modal-desc');
-  var modalMeta = document.getElementById('modal-meta');
-  var modalCta = document.getElementById('modal-cta');
+  <section class="page-head">
+    <span class="blob a"></span>
+    <div class="wrap page-head-inner">
+      <span class="eyebrow">Brands We Trust</span>
+      <h1>Proud to work with<br><em style="font-style:italic;color:var(--ink);">the very best.</em></h1>
+      <p class="lede">We offer a wide range of therapeutic services designed to relax, pamper and improve your wellbeing — using only some of the best skincare brands in the business, for our clients' own health and happiness.</p>
+    </div>
+  </section>
 
-  function openModal (data) {
-    if (!modalOverlay) return;
-    modalTitle.textContent = data.title || '';
-    modalRole.textContent = data.role || '';
-    modalRole.style.display = data.role ? '' : 'none';
-    modalDesc.textContent = data.desc || '';
+  <!-- ===================================================================
+       CHANGED: brands are now split into two clearly separated groups —
+       Face and Body — each rendered into its own list by script.js.
+       Biosculpture and the new Spaliscious brand sit under Body; the
+       rest stay under Face.
+       =================================================================== -->
+  <section class="bg-white" style="padding-top:0;">
+    <div class="wrap">
+      <span class="eyebrow reveal">Tap a brand to learn more</span>
 
-    if (data.img) {
-      modalMedia.style.display = '';
-      modalMedia.classList.remove('no-photo');
-      modalMedia.innerHTML = '<img id="modal-img" src="' + data.img + '" alt="' + (data.title || '') + '">';
-    } else if (data.img === null) {
-      modalMedia.style.display = '';
-      modalMedia.classList.add('no-photo');
-      modalMedia.innerHTML = '<span>Photo coming soon</span>';
-    } else {
-      modalMedia.style.display = 'none';
+      <h3 class="price-cat-heading" style="margin-top:1.6rem;">Face</h3>
+      <div class="brand-list reveal" id="brand-list-face" style="margin-top:1rem;">
+        <!-- rows generated by script.js from brandData below, filtered to group: "face" -->
+      </div>
+
+      <h3 class="price-cat-heading">Body</h3>
+      <div class="brand-list reveal" id="brand-list-body" style="margin-top:1rem;">
+        <!-- rows generated by script.js from brandData below, filtered to group: "body" -->
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-cream-dim">
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">Retail At The Spa</span>
+        <h2>Take your treatment home</h2>
+        <p>Every brand we stock is chosen for its results — from Environ's vitamin-based skincare to Lamelle's clinical formulations. Ask your therapist which range suits your skin during your next visit.</p>
+        <a href="contact.html" class="btn" style="margin-top:.5rem;">Ask Us Anything</a>
+      </div>
+      <div class="split-media reveal">
+        <img src="images/decor-plant.jpg" alt="Styling detail inside African Summer Spa.">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================================================================
+     BRAND DATA — edit this list to add, remove or update brands.
+     "group" must be "face" or "body" — it decides which list on the
+     page the brand appears in. "img" can stay null until you have a
+     product photo — the modal will show a "Photo coming soon"
+     placeholder instead. "whatsapp" is the message sent when someone
+     taps "Book a Treatment".
+     =================================================================== -->
+<script>
+  window.brandData = [
+    {
+      name: "Lamelle",
+      category: "Skincare",
+      group: "face",
+      img: null,
+      description: "Award-winning South African skincare, blending pharmaceutical-grade actives with advanced delivery systems to correct pigmentation, ageing and sensitive skin concerns.",
+      whatsapp: "Hi! I'd like to book a treatment using Lamelle products."
+    },
+    {
+      name: "Biomedical Emporium",
+      category: "Skincare",
+      group: "face",
+      img: null,
+      description: "A clinical skincare range formulated to restore skin health from within, supporting barrier repair and long-term results rather than quick fixes.",
+      whatsapp: "Hi! I'd like to book a treatment using Biomedical Emporium products."
+    },
+    {
+      name: "Environ",
+      category: "Skincare",
+      group: "face",
+      img: null,
+      description: "Founded on vitamin A science, Environ's ranges are designed to boost collagen, even skin tone and protect against environmental damage.",
+      whatsapp: "Hi! I'd like to book a treatment using Environ products."
+    },
+    {
+      name: "Heliocare",
+      category: "Sun Care",
+      group: "face",
+      img: null,
+      description: "Broad-spectrum sun protection powered by Fernblock antioxidant technology, trusted to defend skin against UV exposure and photoageing.",
+      whatsapp: "Hi! I'd like to book a treatment or consultation using Heliocare products."
+    },
+    {
+      name: "Mesoestetic",
+      category: "Clinical Aesthetics",
+      group: "face",
+      img: null,
+      description: "Spanish clinical cosmetics combining dermatological science with visible results, from peels to advanced anti-ageing formulations.",
+      whatsapp: "Hi! I'd like to book a treatment using Mesoestetic products."
+    },
+    {
+      name: "Micci",
+      category: "Sun Care",
+      group: "face",
+      img: null,
+      description: "A high-protection sunscreen with SPF 60+++, formulated to repair, regenerate and protect skin against daily sun exposure.",
+      whatsapp: "Hi! I'd like to know more about Micci sunscreen."
+    },
+    {
+      name: "Biosculpture",
+      category: "Nails",
+      group: "body",
+      img: null,
+      description: "A gel-based nail system free from harsh chemicals, delivering long-lasting, healthy nail treatments without compromising nail strength.",
+      whatsapp: "Hi! I'd like to book a Biosculpture nail treatment."
+    },
+    {
+      name: "Spaliscious",
+      category: "Body Care",
+      group: "body",
+      img: null,
+      description: "Indulgent body care crafted for the spa experience, from scrubs to butters — details on this range are coming soon.",
+      whatsapp: "Hi! I'd like to book a treatment using Spaliscious products."
     }
+  ];
+</script>
 
-    modalMeta.innerHTML = '';
-    if (data.meta && data.meta.length) {
-      data.meta.forEach(function (m) {
-        var d = document.createElement('div');
-        d.innerHTML = '<span class="m-label">' + m.label + '</span><span class="m-value">' + m.value + '</span>';
-        modalMeta.appendChild(d);
-      });
-      modalMeta.style.display = 'flex';
-    } else {
-      modalMeta.style.display = 'none';
-    }
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="name">African Summer Spa</div>
+        <p>Hoedspruit Private Hospital, Medical Centre, North, Unit 2. A considered space for skin, body and self — where clinical expertise meets the stillness of the Lowveld.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+27823709845">082 370 9845</a>
+        <a href="mailto:info@africansummerspa.co.za">info@africansummerspa.co.za</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h5>Trading Hours</h5>
+        <p>Tuesday – Saturday</p>
+        <p>08:00 – 17:00</p>
+        <p>By appointment only</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 African Summer Spa · Biancé Barnard</span>
+      <span class="socials"><a href="about.html">About</a><a href="treatments.html">Treatments</a><a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
 
-    modalCta.innerHTML = '';
-    if (data.ctaText && data.ctaHref) {
-      var a = document.createElement('a');
-      a.href = data.ctaHref;
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'btn btn-solid';
-      a.textContent = data.ctaText;
-      modalCta.appendChild(a);
-    }
+<!-- shared modal used to show brand / team / treatment details -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    <div class="modal-media" id="modal-media"><img id="modal-img" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <span class="modal-role" id="modal-role"></span>
+      <p class="desc" id="modal-desc"></p>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div id="modal-cta"></div>
+    </div>
+  </div>
+</div>
 
-    modalOverlay.classList.add('open');
-    body.classList.add('nav-open');
-  }
-  function closeModal () {
-    if (!modalOverlay) return;
-    modalOverlay.classList.remove('open');
-    body.classList.remove('nav-open');
-  }
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', function (e) {
-      if (e.target === modalOverlay) closeModal();
-    });
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  /* ---------- team accordion (about.html) ---------- */
-  var teamAccordion = document.getElementById('team-accordion');
-  if (teamAccordion) {
-    var items = window.staffData || [];
-
-    teamAccordion.innerHTML = items.map(function (m, i) {
-      var bgStyle = m.img ? ' style="background-image:url(\'' + m.img + '\')"' : '';
-      var cardClass = 'team-card' + (m.img ? '' : ' placeholder');
-      return (
-        '<div class="' + cardClass + '" data-index="' + i + '"' + bgStyle + '>' +
-          '<div class="label">' + m.name + '</div>' +
-          '<div class="detail">' +
-            '<h3>' + m.name + '</h3>' +
-            '<span class="role">' + (m.role || '') + '</span>' +
-            '<p>' + (m.bio || '') + '</p>' +
-          '</div>' +
-        '</div>'
-      );
-    }).join('');
-
-    teamAccordion.querySelectorAll('.team-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        var isOpen = card.classList.contains('expanded');
-        teamAccordion.querySelectorAll('.team-card').forEach(function (c) {
-          c.classList.remove('expanded');
-        });
-        if (!isOpen) card.classList.add('expanded');
-      });
-    });
-  }
-
-  /* ---------- brand lists (products.html) ----------
-     CHANGED: brands now render into separate group containers
-     (Face / Body) instead of one flat list. Each brand's "group"
-     field ("face" or "body") decides which list it lands in. */
-  function renderBrandGroup (containerId, groupKey) {
-    var container = document.getElementById(containerId);
-    if (!container || !window.brandData) return;
-
-    var items = window.brandData.filter(function (b) {
-      return b.group === groupKey;
-    });
-
-    container.innerHTML = items.map(function (b, i) {
-      var num = String(i + 1).padStart(2, '0');
-      return (
-        '<button class="brand-row" data-index="' + i + '">' +
-          '<span class="br-left">' +
-            '<span class="br-num">' + num + '</span>' +
-            '<span class="br-name">' + b.name + '</span>' +
-          '</span>' +
-          '<span class="br-right">' +
-            '<span class="br-cat">' + (b.category || '') + '</span>' +
-            '<span class="br-arrow">→</span>' +
-          '</span>' +
-        '</button>'
-      );
-    }).join('');
-
-    container.querySelectorAll('.brand-row').forEach(function (row) {
-      row.addEventListener('click', function () {
-        var b = items[Number(row.getAttribute('data-index'))];
-        openModal({
-          title: b.name,
-          role: b.category,
-          desc: b.description,
-          img: b.img,
-          ctaText: 'Book a Treatment',
-          ctaHref: 'https://wa.me/27823709845?text=' + encodeURIComponent(b.whatsapp)
-        });
-      });
-    });
-  }
-  renderBrandGroup('brand-list-face', 'face');
-  renderBrandGroup('brand-list-body', 'body');
-
-  /* ---------- price cards (price-list.html) ---------- */
-  var priceCategories = document.querySelectorAll('[data-price-category]');
-  if (priceCategories.length && window.priceData) {
-    priceCategories.forEach(function (container) {
-      var key = container.getAttribute('data-price-category');
-      var items = window.priceData[key] || [];
-      items.forEach(function (item) {
-        var card = document.createElement('button');
-        card.className = 'price-card';
-        var priceLabel = item.price ? item.price : 'Ask us for pricing';
-        var durationLabel = item.duration ? item.duration : '';
-        card.innerHTML =
-          '<span class="pc-name">' + item.name + '</span>' +
-          '<span class="pc-meta">' + (durationLabel ? durationLabel + ' &middot; ' : '') + priceLabel + '</span>' +
-          '<span class="pc-tap">TAP FOR DETAILS</span>';
-        card.addEventListener('click', function () {
-          var meta = [];
-          if (item.duration) meta.push({ label: 'Duration', value: item.duration });
-          meta.push({ label: 'Price', value: priceLabel });
-          openModal({
-            title: item.name,
-            desc: item.description || '',
-            meta: meta,
-            ctaText: 'Enquire on WhatsApp',
-            ctaHref: 'https://wa.me/27823709845?text=' + encodeURIComponent('Hi! I\'d like to book the ' + item.name + ' treatment.')
-          });
-        });
-        container.appendChild(card);
-      });
-    });
-  }
-
-  /* treatments page: category filter, if present */
-  var filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length) {
-    filterBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        filterBtns.forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        var target = btn.getAttribute('data-target');
-        document.querySelectorAll('.treat-group').forEach(function (group) {
-          if (target === 'all' || group.id === target) {
-            group.style.display = '';
-          } else {
-            group.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-});
+<script src="script.js"></script>
+</body>
+</html>
