@@ -161,10 +161,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* ---------- brand list (products.html) ---------- */
-  var brandList = document.getElementById('brand-list');
-  if (brandList && window.brandData) {
-    brandList.innerHTML = window.brandData.map(function (b, i) {
+  /* ---------- brand lists (products.html) ----------
+     CHANGED: brands now render into separate group containers
+     (Face / Body) instead of one flat list. Each brand's "group"
+     field ("face" or "body") decides which list it lands in. */
+  function renderBrandGroup (containerId, groupKey) {
+    var container = document.getElementById(containerId);
+    if (!container || !window.brandData) return;
+
+    var items = window.brandData.filter(function (b) {
+      return b.group === groupKey;
+    });
+
+    container.innerHTML = items.map(function (b, i) {
       var num = String(i + 1).padStart(2, '0');
       return (
         '<button class="brand-row" data-index="' + i + '">' +
@@ -180,9 +189,9 @@ document.addEventListener('DOMContentLoaded', function () {
       );
     }).join('');
 
-    brandList.querySelectorAll('.brand-row').forEach(function (row) {
+    container.querySelectorAll('.brand-row').forEach(function (row) {
       row.addEventListener('click', function () {
-        var b = window.brandData[Number(row.getAttribute('data-index'))];
+        var b = items[Number(row.getAttribute('data-index'))];
         openModal({
           title: b.name,
           role: b.category,
@@ -194,6 +203,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+  renderBrandGroup('brand-list-face', 'face');
+  renderBrandGroup('brand-list-body', 'body');
 
   /* ---------- price cards (price-list.html) ---------- */
   var priceCategories = document.querySelectorAll('[data-price-category]');
