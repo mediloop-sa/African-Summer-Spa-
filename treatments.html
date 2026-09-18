@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Treatments | African Summer Spa</title>
-<meta name="description" content="Body, facial and medical aesthetic treatments at African Summer Spa, Hoedspruit — with Dr. Caymare for medical aesthetics.">
+<meta name="description" content="Treatments at African Summer Spa, Hoedspruit, organised by skin concern — problematic skin, pigmentation, ageing and texture — plus body treatments and medical aesthetics with Dr. Caymaré.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -57,29 +57,102 @@
 
 <main>
 
+  <!-- ===================================================================
+       CHANGED: filter bar and groups below are now organised by skin
+       CONCERN (Problematic Skin, Pigmentation, Ageing, Texture) rather
+       than by treatment type. Body & Relaxation is kept as its own
+       category at the end since massage isn't a skin concern.
+       =================================================================== -->
   <section class="page-head" style="padding-bottom:1.5rem;">
     <span class="blob a"></span>
     <div class="wrap page-head-inner">
       <span class="eyebrow">Lavish Treatments</span>
-      <h1>Our most<br><em style="font-style:italic;color:var(--ink);">relaxing offerings.</em></h1>
-      <p class="lede">Take a moment for yourself. Every treatment is shaped around how you want to feel when you leave.</p>
+      <h1>Treated for<br><em style="font-style:italic;color:var(--ink);">how you want to feel.</em></h1>
+      <p class="lede">Every skin tells a different story. Find your concern below, or book a consultation and we'll guide you to the right treatment.</p>
     </div>
     <div class="wrap filter-bar">
-      <button class="filter-btn active" data-target="all">All Treatments</button>
-      <button class="filter-btn" data-target="body">Body</button>
-      <button class="filter-btn" data-target="facial">Facial</button>
-      <button class="filter-btn" data-target="medical">Medical Aesthetic</button>
+      <button class="filter-btn active" data-target="all">All Concerns</button>
+      <button class="filter-btn" data-target="problematic">Problematic Skin</button>
+      <button class="filter-btn" data-target="pigmentation">Pigmentation</button>
+      <button class="filter-btn" data-target="ageing">Ageing</button>
+      <button class="filter-btn" data-target="texture">Texture</button>
+      <button class="filter-btn" data-target="body">Body &amp; Relaxation</button>
     </div>
   </section>
 
   <section class="bg-white" style="padding-top:1.5rem;">
     <div class="wrap">
 
+      <div id="problematic" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Skin Concern</span>
+            <h2>Problematic Skin</h2>
+          </div>
+          <a href="price-list.html" class="btn">View Price List</a>
+        </div>
+        <p class="lede">Breakouts and congestion don't have to run the show. Our treatments calm inflammation, clear congestion and help restore balance to problematic skin.</p>
+        <div class="incl-list">
+          <span>Breakouts &amp; Acne</span>
+          <span>Enlarged Pores</span>
+          <span>Oily &amp; Congested Skin</span>
+        </div>
+      </div>
+
+      <div id="pigmentation" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Skin Concern</span>
+            <h2>Pigmentation</h2>
+          </div>
+          <a href="price-list.html" class="btn">View Price List</a>
+        </div>
+        <p class="lede">Uneven tone, dark patches and sun damage fade with consistent, targeted treatment — brightening and evening out skin over time.</p>
+        <div class="incl-list">
+          <span>Melasma</span>
+          <span>Post-Inflammatory Hyperpigmentation</span>
+          <span>Sun Spots &amp; Sun Damage</span>
+          <span>Uneven Skin Tone</span>
+        </div>
+      </div>
+
+      <div id="ageing" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Skin Concern</span>
+            <h2>Ageing</h2>
+          </div>
+          <a href="contact.html" class="btn">Enquire</a>
+        </div>
+        <p class="lede">From fine lines to volume loss, our medical aesthetic and skin treatments work together to soften the visible signs of ageing.</p>
+        <div class="incl-list">
+          <span>Fine Lines &amp; Wrinkles</span>
+          <span>Loss of Elasticity &amp; Firmness</span>
+          <span>Volume Loss</span>
+        </div>
+      </div>
+
+      <div id="texture" class="treat-group reveal">
+        <div class="treat-group-head">
+          <div>
+            <span class="eyebrow">Skin Concern</span>
+            <h2>Texture</h2>
+          </div>
+          <a href="price-list.html" class="btn">View Price List</a>
+        </div>
+        <p class="lede">Rough, uneven or scarred skin is smoothed and refined with treatments that support healthy renewal and a more even surface.</p>
+        <div class="incl-list">
+          <span>Rough &amp; Uneven Texture</span>
+          <span>Scarring</span>
+          <span>Congestion</span>
+        </div>
+      </div>
+
       <div id="body" class="treat-group reveal">
         <div class="treat-group-head">
           <div>
             <span class="eyebrow">Body</span>
-            <h2>Massage &amp; Bodywork</h2>
+            <h2>Body &amp; Relaxation</h2>
           </div>
           <a href="price-list.html" class="btn">View Price List</a>
         </div>
@@ -89,40 +162,6 @@
           <span>Deep Tissue</span>
           <span>Back, Neck &amp; Shoulder</span>
           <span>Aromatherapy</span>
-        </div>
-      </div>
-
-      <div id="facial" class="treat-group reveal">
-        <div class="treat-group-head">
-          <div>
-            <span class="eyebrow">Face</span>
-            <h2>Facials</h2>
-          </div>
-          <a href="price-list.html" class="btn">View Price List</a>
-        </div>
-        <p class="lede">A treatment that fits into any busy schedule. Revitalise your body, mind and soul with relaxing, therapeutic, invigorating facials — you'll leave feeling revived, rejuvenated and completely centred.</p>
-        <div class="incl-list">
-          <span>Signature Facial</span>
-          <span>Deep Cleanse</span>
-          <span>Hydration Boost</span>
-          <span>LED Therapy</span>
-        </div>
-      </div>
-
-      <div id="medical" class="treat-group reveal">
-        <div class="treat-group-head">
-          <div>
-            <span class="eyebrow">Medical Aesthetic</span>
-            <h2>With Dr. Caymare</h2>
-          </div>
-          <a href="contact.html" class="btn">Enquire</a>
-        </div>
-        <p class="lede">Medical aesthetic treatment with Dr. Caymare, delivered with a clinical eye and a warm, human approach.</p>
-        <div class="incl-list">
-          <span>Anti-Ageing Injections</span>
-          <span>Dermal Fillers</span>
-          <span>Skin Tag Removal</span>
-          <span>Skin Boosters</span>
         </div>
       </div>
 
