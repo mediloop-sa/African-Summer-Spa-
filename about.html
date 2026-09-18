@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | African Summer Spa</title>
-<meta name="description" content="African Summer Spa began in 1994 in Hoedspruit and is now led by Biancé Janse van Vuuren, bringing holistic wellbeing treatments to the Lowveld.">
+<meta name="description" content="African Summer Spa began in 1994 in Hoedspruit and is now co-owned by Biancé Barnard and Dr. Caymaré, bringing holistic wellbeing and medical aesthetic treatments to the Lowveld.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -53,32 +53,57 @@
     </div>
   </section>
 
+  <!-- ===================================================================
+       CHANGED: this used to be a two-column split with the interior
+       chair photo beside the text. Photo removed per request — the
+       section is now plain, centred-width text.
+       =================================================================== -->
   <section class="bg-white">
-    <div class="wrap split">
-      <div class="reveal">
+    <div class="wrap">
+      <div class="reveal" style="max-width:680px;">
         <span class="eyebrow">Since 1994</span>
         <h2>Advanced treatments, holistic wellbeing</h2>
         <p>Located in an area known for its two summers lies African Summer Spa. The spa is aimed at providing guests with advanced treatments focused on holistic wellbeing.</p>
         <p>Hoedspruit is known for its breathtaking nature and wildlife — the very thing the spa's creator wanted to showcase and bring into the experience at the spa, delivering unparalleled service in an unforgettable setting.</p>
         <p>The spa originated in 1994 to give guests the opportunity to experience not only the natural beauty of the area, but its serene, calming atmosphere. The design of the space allows guests to unwind with a therapeutic treatment, or simply beat the heat by enjoying an afternoon poolside with refreshments.</p>
       </div>
-      <div class="split-media reveal">
-        <img src="images/interior-chair.jpg" alt="Treatment room interior at African Summer Spa, with green tile and natural textures.">
-      </div>
     </div>
   </section>
 
+  <!-- ===================================================================
+       CHANGED: replaces the old single "Meet Biancé" split section.
+       Now a two-up owners section — Biancé's photo/bio on the left,
+       Dr. Caymaré's photo/bio on the right on larger screens; the two
+       stack (photo above text) on mobile. No CTA button on either.
+       =================================================================== -->
   <section class="bg-cream-dim">
-    <div class="wrap split reverse">
-      <div class="split-media reveal">
-        <img src="images/decor-plant.jpg" alt="Styling detail inside African Summer Spa.">
+    <div class="wrap">
+      <div class="reveal" style="max-width:600px;">
+        <span class="eyebrow">Our Owners</span>
+        <h2>Meet Biancé &amp; Dr. Caymaré</h2>
       </div>
-      <div class="reveal">
-        <span class="eyebrow">New Ownership, 2021</span>
-        <h2>Meet Biancé</h2>
-        <p>African Summer Spa changed ownership in 2021. Biancé Barnard, the current owner, is a Hoedspruit local who jumped at the opportunity to share her passion and expertise in health and wellness with every guest.</p>
-        <p>African Summer Spa is the perfect place to escape the hustle and bustle of everyday life, to embrace wellness and ultimate relaxation.</p>
-        <a href="contact.html" class="btn" style="margin-top:.5rem;">Get In Touch</a>
+      <div class="grid-2 owner-grid" style="margin-top:2.5rem;">
+
+        <div class="person reveal">
+          <div class="photo">
+            <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Biance.jpg" alt="Biancé Barnard, owner of African Summer Spa.">
+          </div>
+          <span class="eyebrow">Owner &middot; Since 2021</span>
+          <h3>Biancé Barnard</h3>
+          <p>African Summer Spa changed ownership in 2021. Biancé Barnard, the current owner, is a Hoedspruit local who jumped at the opportunity to share her passion and expertise in health and wellness with every guest.</p>
+          <p>African Summer Spa is the perfect place to escape the hustle and bustle of everyday life, to embrace wellness and ultimate relaxation.</p>
+        </div>
+
+        <div class="person reveal">
+          <div class="photo">
+            <img src="https://vafzjdqepmuunwqhzunz.supabase.co/storage/v1/object/public/branding/Dr%20Caymare.jpg" alt="Dr. Caymaré, co-owner of African Summer Spa.">
+          </div>
+          <span class="eyebrow">Co-Owner &middot; Since February 2025</span>
+          <h3>Dr. Caymaré</h3>
+          <p>Dr. Caymaré joined African Summer Spa as co-owner in February 2025, leading the medical aesthetics side of the practice — anti-ageing injections, dermal fillers, skin boosters and skin tag removal — delivered with a clinical eye and a warm, human approach.</p>
+          <p>African Summer Aesthetics turns two this coming February, and Dr. Caymaré's clinical expertise has been part of that growth from the very beginning.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -102,49 +127,39 @@
      STAFF DATA — edit this list to add, remove or update team members.
      "img" can be left as null (no quotes) until you have a photo —
      the card will show a placeholder pattern instead.
-     There are 6 slots shown on the page; if you list fewer than 6 here,
-     script.js will automatically fill the rest with "Coming Soon" cards.
+     CHANGED: Biancé and Dr. Caymaré have their own dedicated owners
+     section above now, so they've been removed from here. This list
+     is exactly the 4 remaining team members — script.js no longer
+     pads it out to 6, so it will just show these 4 cards.
      =================================================================== -->
 <script>
   window.staffData = [
     {
-      name: "Biancé Barnard",
-      role: "Owner & Skin Therapist",
-      img: "images/therapist.jpg",
-      bio: "Biancé is a Hoedspruit local who took over African Summer Spa in 2021, bringing her passion and expertise in health and wellness to every guest who walks through the door."
-    },
-    {
-      name: "Dr. Caymare Louw",
-      role: "Medical Aesthetics",
-      img: null,
-      bio: "Dr. Caymare leads our medical aesthetic treatments, including anti-ageing injections, dermal fillers, skin boosters and skin tag removal — delivered with a clinical eye and a warm, human approach."
-    },
-    {
-      name: "Staff 3",
+      name: "Kea Dilebo",
       role: "Coming Soon",
       img: null,
-      bio: "We're growing our team — details for this therapist are coming soon."
+      bio: "We're putting together Kea's profile — details are coming soon."
     },
     {
-      name: "Staff 4",
+      name: "Carla Booyse",
       role: "Coming Soon",
       img: null,
-      bio: "We're growing our team — details for this therapist are coming soon."
+      bio: "We're putting together Carla's profile — details are coming soon."
     },
     {
-      name: "Staff 5",
+      name: "Marble Mathebula",
       role: "Coming Soon",
       img: null,
-      bio: "We're growing our team — details for this therapist are coming soon."
+      bio: "We're putting together Marble's profile — details are coming soon."
     },
     {
-      name: "Staff 6",
+      name: "Nothando Mokoena",
       role: "Coming Soon",
       img: null,
-      bio: "We're growing our team — details for this therapist are coming soon."
+      bio: "We're putting together Nothando's profile — details are coming soon."
     }
-    // To add a real team member later, replace one of the "Staff N"
-    // placeholder blocks above with their real name, role, img and bio.
+    // Add photos by setting "img" to the image path/URL for each person
+    // once you have them, and update "role" and "bio" with real details.
   ];
 </script>
 
