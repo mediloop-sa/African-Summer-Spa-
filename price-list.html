@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Price List | African Summer Spa</title>
-<meta name="description" content="View or download the African Summer Spa pricing brochure for body, facial, mani & pedi, grooming and medical aesthetic treatments.">
+<meta name="description" content="Full pricing at African Summer Spa, Hoedspruit — body, facial, hand care, eye care, waxing, tanning, skin aesthetics, medical aesthetics, and spa packages.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -81,18 +81,59 @@
       <p class="swipe-hint">Swipe to explore →</p>
       <div class="price-scroll reveal" data-price-category="facial"></div>
 
-      <h3 class="price-cat-heading">Mani &amp; Pedi</h3>
+      <h3 class="price-cat-heading">Hand Care &amp; Pedicure</h3>
       <p class="swipe-hint">Swipe to explore →</p>
-      <div class="price-scroll reveal" data-price-category="manipedi"></div>
+      <div class="price-scroll reveal" data-price-category="handcare"></div>
 
-      <h3 class="price-cat-heading">Grooming</h3>
+      <h3 class="price-cat-heading">Eye Care</h3>
       <p class="swipe-hint">Swipe to explore →</p>
-      <div class="price-scroll reveal" data-price-category="grooming"></div>
+      <div class="price-scroll reveal" data-price-category="eyecare"></div>
+
+      <h3 class="price-cat-heading">Waxing — Ladies</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="waxingladies"></div>
+
+      <h3 class="price-cat-heading">Waxing — Men's</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="waxingmens"></div>
+
+      <h3 class="price-cat-heading">Tanning</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="tanning"></div>
+
+      <h3 class="price-cat-heading">IPL &amp; Laser Hair Removal</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="laser"></div>
+
+      <h3 class="price-cat-heading">Skin Aesthetics</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="skinaesthetics"></div>
 
       <h3 class="price-cat-heading">Medical Aesthetic</h3>
       <p class="swipe-hint">Swipe to explore →</p>
       <div class="price-scroll reveal" data-price-category="medical"></div>
 
+      <h3 class="price-cat-heading">Packages &amp; Specials</h3>
+      <p class="swipe-hint">Swipe to explore →</p>
+      <div class="price-scroll reveal" data-price-category="packages"></div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       NEW: "Good to Know" notes, straight from the printed brochure's
+       disclaimers.
+       =================================================================== -->
+  <section class="bg-cream-dim">
+    <div class="wrap">
+      <div class="contact-card reveal" style="max-width:640px;">
+        <h4>Good to Know</h4>
+        <p style="margin-bottom:.5em; font-size:.9rem;">• African Summer Spa is not responsible for any theft, damage, loss or misfortune that may occur in/around the spa.</p>
+        <p style="margin-bottom:.5em; font-size:.9rem;">• Products purchased are non-refundable.</p>
+        <p style="margin-bottom:.5em; font-size:.9rem;">• Prices are subject to change without notice.</p>
+        <p style="margin-bottom:.5em; font-size:.9rem;">• Cancellations within less than 12 hours will still be charged.</p>
+        <p style="margin-bottom:0; font-size:.9rem;">• Gift vouchers are available for treatments only — no cash or product returns.</p>
+      </div>
     </div>
   </section>
 
@@ -124,26 +165,79 @@
       { name: "Signature Facial", duration: "45 min", price: "", description: "A relaxing, therapeutic facial that leaves your skin luminous, balanced and deeply cared for." },
       { name: "Deep Cleanse Facial", duration: "45 min", price: "", description: "A thorough cleanse and exfoliation to clear congestion and refresh dull skin." },
       { name: "Hydration Boost", duration: "45 min", price: "", description: "An intensive moisture treatment for dry or dehydrated skin." },
-      { name: "LED Therapy", duration: "30 min", price: "", description: "Light-based therapy to support skin renewal and a healthy glow." }
+      { name: "LED Therapy", duration: "30 min", price: "", description: "Light-based therapy to support skin renewal and a healthy glow." },
+      { name: "Vit C Boost Facial", duration: "60 min", price: "R950", description: "A brightening, antioxidant-rich facial to even tone and add radiance." },
+      { name: "Dermaplaning", duration: "60 min", price: "R950", description: "Includes a hydrating boost facial. Gently removes dead skin and peach fuzz for smoother, brighter skin." },
+      { name: "Add-On: Retinol 1ml", duration: "10 min", price: "R100", description: "A retinol boost added on to any facial." },
+      { name: "Add-On: Growth Factor Sheet Mask", duration: "20 min", price: "R120", description: "A sheet mask add-on to support skin renewal." },
+      { name: "Add-On: Hydrating Peel", duration: "20 min", price: "R250", description: "A hydrating peel add-on for extra glow." }
     ],
-    manipedi: [
-      { name: "Buff & Shine", duration: "30 min", price: "", description: "A no-polish nail treatment that buffs nails to a natural, healthy shine." },
-      { name: "Classic Manicure", duration: "45 min", price: "", description: "Shape, cuticle care, hand massage and polish of your choice." },
+    handcare: [
+      { name: "Express File & Cutex", duration: "45 min", price: "R300", description: "A quick nail service with file and cutex finish. Biosculpture or OPI." },
+      { name: "Express File & Gel Overlay", duration: "60 min", price: "R380", description: "File and durable gel overlay finish. Biosculpture or OPI." },
+      { name: "Classic Manicure", duration: "60 min", price: "R400", description: "File, exfoliate, massage and cutex finish. Biosculpture or OPI." },
+      { name: "Classic Gel Manicure", duration: "75 min", price: "R450", description: "The full manicure experience finished with a chip-resistant gel overlay. Biosculpture or OPI." },
       { name: "Classic Pedicure", duration: "60 min", price: "", description: "A relaxing foot soak, exfoliation, shape, cuticle care and polish." },
-      { name: "Gel Overlay Manicure", duration: "45 min", price: "", description: "A durable gel finish over your natural nails for long-lasting shine." },
-      { name: "Gel Overlay Pedicure", duration: "60 min", price: "", description: "The full pedicure experience finished with a chip-resistant gel overlay." }
+      { name: "Gel Overlay Pedicure", duration: "60 min", price: "", description: "The full pedicure experience finished with a chip-resistant gel overlay." },
+      { name: "Buff & Shine", duration: "30 min", price: "", description: "A no-polish nail treatment that buffs nails to a natural, healthy shine." },
+      { name: "Add-On: Soak Off (from other work)", duration: "20 min", price: "R65", description: "Removal of gel or overlay done elsewhere." },
+      { name: "Add-On: Parrafin Dip", duration: "20 min", price: "R100", description: "A warm paraffin wax dip to soften and nourish hands or feet." },
+      { name: "Add-On: Medi Heel", duration: "20 min", price: "R150", description: "Targeted treatment for dry, cracked heels." }
     ],
-    grooming: [
-      { name: "Eyebrow Shape & Tint", duration: "20 min", price: "", description: "Shape and tint to define and frame the eyes." },
-      { name: "Underarm Wax", duration: "15 min", price: "", description: "Quick, thorough underarm waxing." },
-      { name: "Leg Wax", duration: "45 min", price: "", description: "Full or half leg waxing for smooth, longer-lasting results." },
-      { name: "IPL Bikini", duration: "20 min", price: "", description: "Intense pulsed light hair reduction treatment for the bikini area." }
+    eyecare: [
+      { name: "Eyebrow Shape", duration: "", price: "R50", description: "A clean, defined brow shape." },
+      { name: "Eyebrow Tint", duration: "", price: "R100", description: "Tint to define and darken brows." },
+      { name: "Eyebrow Shape & Tint", duration: "", price: "R150", description: "Shape and tint together, to define and frame the eyes." },
+      { name: "Lash Tint", duration: "", price: "R100", description: "A tint to darken lashes for a fuller look without mascara." },
+      { name: "Henna Brow Shape & Tint", duration: "", price: "R210", description: "A longer-lasting henna tint with a full brow shape." }
+    ],
+    waxingladies: [
+      { name: "Extended Bikini Wax", duration: "", price: "R250", description: "" },
+      { name: "Hollywood Wax", duration: "", price: "R350", description: "" },
+      { name: "Hollywood Front & Back Wax", duration: "", price: "R380", description: "" },
+      { name: "Under Arm Wax", duration: "", price: "R150", description: "" },
+      { name: "Full Arm Wax", duration: "", price: "R250", description: "" },
+      { name: "Lip / Chin / Sides Wax", duration: "", price: "R80", description: "" },
+      { name: "Full Face Wax", duration: "", price: "R300", description: "" }
+    ],
+    waxingmens: [
+      { name: "Upper Back Wax", duration: "", price: "R400", description: "" },
+      { name: "Lower Back Wax", duration: "", price: "R400", description: "" },
+      { name: "Full Back Wax", duration: "", price: "R650", description: "" },
+      { name: "Full Arm Wax", duration: "", price: "R320", description: "" },
+      { name: "Full Leg Wax", duration: "", price: "R400", description: "" },
+      { name: "Chest Wax", duration: "", price: "R280", description: "" },
+      { name: "Nose / Eyebrow / Ear Wax", duration: "", price: "R180", description: "" }
+    ],
+    tanning: [
+      { name: "Tan Lab Spray Tan — Legs Only", duration: "", price: "R280", description: "A natural-looking spray tan for the legs." },
+      { name: "Tan Lab Spray Tan — Full Body", duration: "", price: "R500", description: "A natural-looking full body spray tan." }
+    ],
+    laser: [
+      { name: "IPL Bikini", duration: "20 min", price: "", description: "Intense pulsed light hair reduction treatment for the bikini area." },
+      { name: "Full Leg", duration: "", price: "R1500", description: "Laser/IPL hair reduction for the full leg." },
+      { name: "1/2 Leg", duration: "", price: "R1200", description: "Laser/IPL hair reduction for half the leg." }
+    ],
+    skinaesthetics: [
+      { name: "Microneedling — Face & Neck", duration: "60 min", price: "R1200", description: "Collagen-stimulating microneedling for the face and neck." },
+      { name: "Microneedling — Face, Neck & Décolleté", duration: "75 min", price: "R1300", description: "Extended microneedling to include the décolleté." },
+      { name: "Biomedical Gold Facial", duration: "60 min", price: "R1500 – R1800", description: "Includes microneedling, for advanced skin renewal." },
+      { name: "Advance Biomedical Facials", duration: "45 min", price: "Price on Request", description: "Advanced clinical facial, quoted based on your skin's needs." },
+      { name: "Other Medical Facials", duration: "", price: "Price on Request", description: "Additional medical-grade facials, quoted based on your skin's needs." }
     ],
     medical: [
       { name: "Anti-Ageing Injections", duration: "", price: "", description: "Medical aesthetic treatment with Dr. Caymare, delivered with a clinical eye and a warm, human approach." },
       { name: "Dermal Fillers", duration: "", price: "", description: "Restore volume and soften lines with Dr. Caymare." },
       { name: "Skin Boosters", duration: "", price: "", description: "Deep hydration injectables for smoother, plumper skin." },
       { name: "Skin Tag Removal", duration: "", price: "", description: "Quick, in-office removal with Dr. Caymare." }
+    ],
+    packages: [
+      { name: "Indian Head, Foot Ritual & Hot-Stone Massage", duration: "90 min", price: "R1150", description: "Indian Head Massage, Foot Ritual and a Hot-Stone Back, Neck and Shoulder Massage." },
+      { name: "Colour Me Pretty", duration: "2 hr 45 min", price: "R1350", description: "Gel manicure, gel pedicure, 30-min express facial, and eyebrow shape & tint." },
+      { name: "Perfect Pamper", duration: "1 hr 15 min", price: "R1200", description: "Express facial, back/neck/shoulder massage, and a file & paint for toes and hands." },
+      { name: "Wedding Prep", duration: "90 min", price: "R1100", description: "Vit C Boost facial, eyebrow shape & tint, Hollywood wax and a leg wax." },
+      { name: "Medical Combo", duration: "3 hours", price: "R5300", description: "Skin booster facial and teeth whitening (Polar Light, in-chair) with Dr. Caymare, including a gel pedicure." },
+      { name: "Time Out For Two", duration: "75 min", price: "R2000", description: "A 45-min back, neck & shoulder massage plus a foot scrub and massage — for two people." }
     ]
   };
 </script>
