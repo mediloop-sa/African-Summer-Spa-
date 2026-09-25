@@ -233,12 +233,38 @@ body.nav-open{ overflow:hidden; }
   display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;
 }
 .hero-photo{
+  position:relative;
   margin-top:4rem;
   aspect-ratio:16/10;
   overflow:hidden;
   border-radius:2px;
 }
 .hero-photo img{ width:100%; height:100%; object-fit:cover; }
+
+/* ---------- hero slideshow (index.html) — fades between 4 images, loops ---------- */
+.hero-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  animation:heroFade 20s infinite;
+}
+.hero-slide:nth-child(1){ animation-delay:0s; }
+.hero-slide:nth-child(2){ animation-delay:5s; }
+.hero-slide:nth-child(3){ animation-delay:10s; }
+.hero-slide:nth-child(4){ animation-delay:15s; }
+
+@keyframes heroFade{
+  0%{ opacity:0; }
+  2%{ opacity:1; }
+  23%{ opacity:1; }
+  25%{ opacity:0; }
+  100%{ opacity:0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-slide{ animation:none; opacity:0; }
+  .hero-slide:first-child{ opacity:1; }
+}
 
 /* page header (non-home hero) */
 .page-head{
