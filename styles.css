@@ -157,9 +157,14 @@ p{ margin:0 0 1em; max-width:62ch; }
   justify-content:space-between;
   padding:1.4rem clamp(1.25rem,5vw,3.5rem) 2.5rem;
   transform:translateY(-100%);
-  transition:transform .5s cubic-bezier(.65,0,.35,1);
+  visibility:hidden;
+  transition:transform .5s cubic-bezier(.65,0,.35,1), visibility 0s linear .5s;
 }
-.nav-overlay.open{ transform:translateY(0); }
+.nav-overlay.open{
+  transform:translateY(0);
+  visibility:visible;
+  transition:transform .5s cubic-bezier(.65,0,.35,1), visibility 0s linear 0s;
+}
 .nav-overlay-top{
   display:flex; justify-content:space-between; align-items:center;
 }
@@ -618,7 +623,7 @@ hr.rule{
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   .reveal{ transition:none; opacity:1; transform:none; }
-  .nav-overlay{ transition:none; }
+  .nav-overlay{ transition:visibility 0s linear; }
 }
 
 /* ---------- desktop / tablet nav bar ----------
@@ -642,6 +647,7 @@ hr.rule{
     gap:2.5rem;
     padding:1.1rem clamp(1.25rem, 4vw, 3rem);
     transform:none;
+    visibility:visible;
     transition:none;
     pointer-events:none;
   }
