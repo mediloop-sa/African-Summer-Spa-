@@ -86,7 +86,7 @@
     <div class="wrap">
       <div class="reveal" style="max-width:640px;">
         <span class="eyebrow">Lavish Treatments</span>
-        <h2>What we offer!</h2>
+        <h2>Our most restorative offerings</h2>
       </div>
       <div class="grid-3" style="margin-top:2.5rem;">
 
@@ -116,30 +116,77 @@
   </section>
 
   <!-- ===================================================================
-       GIFT VOUCHERS — replaces the old trading-hours strip. No payment
-       backend on this site, so "purchase" here opens WhatsApp pre-filled
-       with the chosen amount so Biancé can arrange payment directly.
+       GIFT VOUCHERS — pick an amount, a "dossier" form opens, and on
+       send the details open WhatsApp to the spa, pre-filled, so staff
+       can arrange payment and delivery. (No payment backend on site.)
        =================================================================== -->
-  <section class="bg-sage voucher-section">
-    <div class="wrap center reveal" style="max-width:620px;">
+  <section class="bg-sage voucher-section" id="vouchers">
+    <div class="wrap center reveal" style="max-width:680px;">
       <span class="eyebrow" style="color:rgba(248,243,238,.7);">Gift Vouchers</span>
       <h2>Give the gift of rest</h2>
-      <p style="color:rgba(248,243,238,.85); margin:0 auto 2rem;">Treat someone to a moment of stillness. Choose an amount below and we'll arrange the rest over WhatsApp.</p>
+      <p style="color:rgba(248,243,238,.85); margin:0 auto 2rem;">Treat someone to a moment of stillness. Choose an amount, tell us who it's for, and we'll arrange the rest over WhatsApp.</p>
 
       <div class="voucher-amounts" id="voucher-amounts">
         <button type="button" class="voucher-pill" data-amount="R500">R500</button>
         <button type="button" class="voucher-pill" data-amount="R1 000">R1 000</button>
         <button type="button" class="voucher-pill" data-amount="R1 500">R1 500</button>
-        <button type="button" class="voucher-pill" data-amount="a custom amount">Custom Amount</button>
+        <button type="button" class="voucher-pill" data-amount="custom">Custom Amount</button>
       </div>
 
-      <a
-        href="https://wa.me/27823709845?text=Hi!%20I'd%20like%20to%20purchase%20a%20gift%20voucher."
-        id="voucher-cta"
-        class="btn btn-ghost-light"
-        target="_blank"
-        rel="noopener"
-      >Purchase via WhatsApp</a>
+      <div class="voucher-dossier" id="voucher-dossier" aria-hidden="true">
+        <div class="voucher-dossier-inner">
+          <form class="voucher-form" id="voucher-form" novalidate>
+            <div class="vf-head">
+              <span class="vf-title">Voucher Details</span>
+              <button type="button" class="vf-close" id="voucher-close" aria-label="Close voucher form">✕</button>
+            </div>
+
+            <fieldset class="vf-type">
+              <legend>Voucher type</legend>
+              <label class="vf-choice">
+                <input type="radio" name="vtype" value="Online" checked>
+                <span><strong>Online</strong><small>Sent to the email address below</small></span>
+              </label>
+              <label class="vf-choice">
+                <input type="radio" name="vtype" value="Physical">
+                <span><strong>Physical</strong><small>A printed voucher</small></span>
+              </label>
+            </fieldset>
+            <p class="vf-note" id="vf-physical-note" hidden>All physical vouchers must be collected at the spa.</p>
+
+            <div class="vf-grid">
+              <div class="vf-field">
+                <label for="vf-amount">Voucher amount (Rand)</label>
+                <input type="text" id="vf-amount" name="amount" inputmode="numeric" placeholder="e.g. R750" autocomplete="off">
+              </div>
+              <div class="vf-field">
+                <label for="vf-email">Your email</label>
+                <input type="email" id="vf-email" name="email" placeholder="you@email.com" autocomplete="email">
+              </div>
+              <div class="vf-field">
+                <label for="vf-phone">Phone / WhatsApp number</label>
+                <input type="tel" id="vf-phone" name="phone" placeholder="082 000 0000" autocomplete="tel">
+              </div>
+              <div class="vf-field">
+                <label for="vf-from">From (who)</label>
+                <input type="text" id="vf-from" name="from" placeholder="Your name" autocomplete="name">
+              </div>
+              <div class="vf-field vf-full">
+                <label for="vf-to">To (who)</label>
+                <input type="text" id="vf-to" name="to" placeholder="Who is it for?">
+              </div>
+              <div class="vf-field vf-full">
+                <label for="vf-message">Message on the voucher <span class="vf-opt">(optional)</span></label>
+                <textarea id="vf-message" name="message" rows="3" placeholder="A few kind words…"></textarea>
+              </div>
+            </div>
+
+            <p class="vf-error" id="vf-error" role="alert" hidden></p>
+            <button type="submit" class="btn btn-solid vf-submit">Send via WhatsApp</button>
+            <p class="vf-fine">This opens WhatsApp with your details filled in. Nothing is charged &mdash; we'll confirm payment with you there.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
