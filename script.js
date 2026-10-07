@@ -39,23 +39,123 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- gift voucher amount picker (index.html) ----------
-     FIX: the pills previously had no click behaviour at all — the
-     "active" state and the WhatsApp link never updated. This wires
-     them up: clicking a pill highlights it and rewrites the
-     pre-filled WhatsApp message to include the chosen amount. */
+  /* ---------- gift voucher dossier (index.html) ----------
+     Pick an amount -> the form panel opens. On submit, the details are
+     validated and sent to the spa as a pre-filled WhatsApp message. */
   var voucherWrap = document.getElementById('voucher-amounts');
-  var voucherCta = document.getElementById('voucher-cta');
-  if (voucherWrap && voucherCta) {
-    var voucherPills = voucherWrap.querySelectorAll('.voucher-pill');
-    voucherPills.forEach(function (pill) {
+  var dossier = document.getElementById('voucher-dossier');
+  var vForm = document.getElementById('voucher-form');
+  if (voucherWrap && dossier && vForm) {
+    var vPills = voucherWrap.querySelectorAll('.voucher-pill');
+    var vAmount = document.getElementById('vf-amount');
+    var vNote = document.getElementById('vf-physical-note');
+    var vError = document.getElementById('vf-error');
+    var vClose = document.getElementById('voucher-close');
+    var vField = function (id) { return document.getElementById(id); };
+
+    function openDossier () {
+      dossier.classList.add('open');
+      dossier.setAttribute('aria-hidden', 'false');
+    }
+    function closeDossier () {
+      dossier.classList.remove('open');
+      dossier.setAttribute('aria-hidden', 'true');
+      vPills.forEach(function (p) { p.classList.remove('active'); });
+    }
+
+    vPills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        voucherPills.forEach(function (p) { p.classList.remove('active'); });
+        vPills.forEach(function (p) { p.classList.remove('active'); });
         pill.classList.add('active');
-        var amount = pill.getAttribute('data-amount');
-        var message = "Hi! I'd like to purchase a gift voucher for " + amount + ".";
-        voucherCta.href = 'https://wa.me/27823709845?text=' + encodeURIComponent(message);
+        var amt = pill.getAttribute('data-amount');
+        var wasOpen = dossier.classList.contains('open');
+        if (amt === 'custom') {
+          vAmount.value = '';
+        } else {
+          vAmount.value = amt;
+        }
+        openDossier();
+        if (amt === 'custom') {
+          setTimeout(function () { vAmount.focus(); }, wasOpen ? 0 : 600);
+        } else if (!wasOpen) {
+          setTimeout(function () {
+            dossier.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 300);
+        }
       });
+    });
+    if (vClose) vClose.addEventListener('click', closeDossier);
+
+    /* keep the pills in sync if the amount is typed by hand */
+    vAmount.addEventListener('input', function () {
+      var typed = vAmount.value.replace(/\s/g, '').toUpperCase();
+      vPills.forEach(function (p) {
+        var a = (p.getAttribute('data-amount') || '').replace(/\s/g, '').toUpperCase();
+        p.classList.toggle('active', a === typed || (a === 'CUSTOM' && typed !== '' && ['R500','R1000','R1500'].indexOf(typed) === -1));
+      });
+    });
+
+    /* clear red error state as the visitor fixes a field */
+    vForm.querySelectorAll('input, textarea').forEach(function (el) {
+      el.addEventListener('input', function () { el.classList.remove('invalid'); });
+    });
+
+    /* physical voucher note */
+    vForm.querySelectorAll('input[name="vtype"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        var physical = vForm.querySelector('input[name="vtype"]:checked').value === 'Physical';
+        vNote.hidden = !physical;
+      });
+    });
+
+    vForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = {
+        amount: vAmount.value.trim(),
+        email: vField('vf-email').value.trim(),
+        phone: vField('vf-phone').value.trim(),
+        from: vField('vf-from').value.trim(),
+        to: vField('vf-to').value.trim(),
+        message: vField('vf-message').value.trim(),
+        type: vForm.querySelector('input[name="vtype"]:checked').value
+      };
+
+      ['vf-amount','vf-email','vf-phone','vf-from','vf-to'].forEach(function (id) {
+        vField(id).classList.remove('invalid');
+      });
+      var problems = [];
+      var amountDigits = f.amount.replace(/[^0-9]/g, '');
+      if (!amountDigits || Number(amountDigits) < 1) problems.push(['vf-amount', 'a voucher amount']);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) problems.push(['vf-email', 'a valid email address']);
+      if (f.phone.replace(/[^0-9]/g, '').length < 9) problems.push(['vf-phone', 'a phone / WhatsApp number']);
+      if (!f.from) problems.push(['vf-from', 'who the voucher is from']);
+      if (!f.to) problems.push(['vf-to', 'who the voucher is for']);
+
+      if (problems.length) {
+        problems.forEach(function (p) { vField(p[0]).classList.add('invalid'); });
+        vError.textContent = 'Please add ' + problems.map(function (p) { return p[1]; }).join(', ').replace(/, ([^,]*)$/, ' and $1') + '.';
+        vError.hidden = false;
+        vField(problems[0][0]).focus();
+        return;
+      }
+      vError.hidden = true;
+
+      var amountLabel = /^\s*R/i.test(f.amount) ? f.amount : 'R' + f.amount;
+      var lines = [
+        'Hi African Summer Spa! I would like to purchase a gift voucher.',
+        '',
+        '*Voucher type:* ' + f.type + (f.type === 'Physical' ? ' (I will collect it at the spa)' : ''),
+        '*Amount:* ' + amountLabel,
+        '*From:* ' + f.from,
+        '*To:* ' + f.to,
+        '*Message:* ' + (f.message || '(none)'),
+        '',
+        '*My email:* ' + f.email,
+        '*My phone / WhatsApp:* ' + f.phone
+      ];
+      var url = 'https://wa.me/27823709845?text=' + encodeURIComponent(lines.join('\n'));
+      var win = window.open(url, '_blank', 'noopener');
+      if (!win) window.location.href = url;
     });
   }
 
